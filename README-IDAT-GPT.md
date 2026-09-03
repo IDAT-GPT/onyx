@@ -167,7 +167,69 @@ Inside Linux, nginx receives the request and routes it to the app.
 
 ---
 
-## 5. Getting updates from the original Onyx project
+## 5. If the server is down — recovery
+
+What survives a reboot on its own: the port-forward, the firewall rule, and
+**all data** (Docker volumes). Docker and every container start automatically —
+as soon as the Linux system (WSL) starts. WSL itself is the only piece that
+needs a push.
+
+### Recovery in one command
+
+Log on to the VM (`10.0.0.206`) and run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File C:\Users\GPT-Admin\start-idat-gpt.ps1
+```
+
+The script starts WSL, keeps it alive, starts anything missing, waits for the
+health check, and prints **"IDAT-GPT is UP"** (2–3 minutes). It is safe to run
+at any time.
+
+### Automatic recovery
+
+- A Startup entry (`idat-gpt-autostart.cmd` in the Startup folder of
+  `GPT-Admin`) runs this script automatically at every **logon**.
+- For recovery at **boot** (nobody has to log on), run once in an
+  *Administrator* PowerShell:
+
+  ```powershell
+  schtasks /create /tn "IDAT-GPT autostart" /tr "powershell -ExecutionPolicy Bypass -File C:\Users\GPT-Admin\start-idat-gpt.ps1" /sc onstart /ru SYSTEM /rl highest
+  ```
+
+### App answers wrong / one container broken (server itself fine)
+
+```bash
+wsl -d Ubuntu
+docker compose -p idat-gpt ps                      # what is Exited/unhealthy?
+docker compose -p idat-gpt logs --tail 100 <name>  # read the error
+docker compose -p idat-gpt up -d                   # recreate what is missing
+```
+
+Or use Portainer: https://localhost:9443 on the VM.
+
+### Backups (automatic)
+
+Every night at 02:00 a cron job inside Ubuntu writes a database dump and a copy
+of the secrets file to `C:\Users\GPT-Admin\idat-backups\` and keeps the newest
+14 (`~/idat_backup.sh`, log: `backup.log`). Together with the code on GitHub,
+these files are enough to rebuild IDAT-GPT on any new machine:
+database dump + `idat-gpt.env` + `git clone` → build → restore.
+Copy that folder to a network share regularly — backups on the same
+machine do not protect against a dead disk.
+
+### Total loss of the VM
+
+1. New machine with Docker (any Linux, or Windows+WSL like today).
+2. `git clone https://github.com/darilsobze/onyx -b idat-gpt`
+3. Restore `idat-gpt.env`, build (`release.sh`), start the stack.
+4. Restore the database dump into `relational_db`
+   (`gunzip -c db-<date>.sql.gz | docker exec -i <db-container> psql -U postgres`).
+5. Documents re-index themselves from the connectors.
+
+---
+
+## 6. Getting updates from the original Onyx project
 
 Our fork can absorb upstream improvements:
 
@@ -183,7 +245,7 @@ cd web && SCRATCH=/tmp bun ../tools/rebrand/gen_assets.mjs   # only if logos cha
 
 ---
 
-## 6. FAQ
+## 7. FAQ
 
 **I added an LLM key / connector in dev. Why is production unchanged?**
 Keys and connectors are *data*, stored in each tier's own database. Configure
