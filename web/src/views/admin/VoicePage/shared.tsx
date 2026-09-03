@@ -103,9 +103,12 @@ export function VoiceProviderSetupModal({
   }, [providerType]);
 
   const validationSchema = Yup.object().shape({
-    api_key: Yup.string().required(t("setupModal.apiKey.required")),
+    api_key:
+      providerType === "custom"
+        ? Yup.string()
+        : Yup.string().required(t("setupModal.apiKey.required")),
     target_uri:
-      providerType === "azure"
+      providerType === "azure" || providerType === "custom"
         ? Yup.string().required(t("setupModal.targetUri.required"))
         : Yup.string(),
     stt_model: Yup.string(),
@@ -150,7 +153,8 @@ export function VoiceProviderSetupModal({
   const initialValues: VoiceFormValues = {
     api_key: existingProvider?.api_key ?? "",
     target_uri: existingProvider?.target_uri ?? "",
-    stt_model: existingProvider?.stt_model ?? "whisper-1",
+    stt_model:
+      existingProvider?.stt_model ?? detail.sttModels?.[0]?.id ?? "whisper-1",
     tts_model: initialTtsModel,
     default_voice: initialDefaultVoice,
     stt_languages: sttLanguagesToInput(
@@ -266,19 +270,25 @@ export function VoiceProviderSetupModal({
               />
               <Modal.Body>
                 <Section gap={4} alignItems="stretch">
-                  {providerType === "azure" && (
+                  {(providerType === "azure" || providerType === "custom") && (
                     <InputVertical
                       title={t("setupModal.targetUri.label")}
                       subDescription={markdown(
-                        t("setupModal.targetUri.description", {
-                          portalUrl: AZURE_PORTAL_URL,
-                        })
+                        providerType === "azure"
+                          ? t("setupModal.targetUri.description", {
+                              portalUrl: AZURE_PORTAL_URL,
+                            })
+                          : t("setupModal.targetUri.customDescription")
                       )}
                       withLabel="target_uri"
                     >
                       <InputTypeInField
                         name="target_uri"
-                        placeholder="https://your_resource_region.tts.speech.microsoft.com/"
+                        placeholder={
+                          providerType === "azure"
+                            ? "https://your_resource_region.tts.speech.microsoft.com/"
+                            : "http://host.docker.internal:8000"
+                        }
                       />
                     </InputVertical>
                   )}
@@ -286,16 +296,22 @@ export function VoiceProviderSetupModal({
                   <InputVertical
                     title={t("setupModal.apiKey.label")}
                     subDescription={markdown(
-                      t("setupModal.apiKey.description", {
-                        url: detail.apiKeyUrl ?? "",
-                        provider: detail.label,
-                      })
+                      providerType === "custom"
+                        ? t("setupModal.apiKey.optionalDescription")
+                        : t("setupModal.apiKey.description", {
+                            url: detail.apiKeyUrl ?? "",
+                            provider: detail.label,
+                          })
                     )}
                     withLabel="api_key"
                   >
                     <PasswordInputTypeInField
                       name="api_key"
-                      placeholder={t("setupModal.apiKey.placeholder")}
+                      placeholder={
+                        providerType === "custom"
+                          ? t("setupModal.apiKey.optionalPlaceholder")
+                          : t("setupModal.apiKey.placeholder")
+                      }
                     />
                   </InputVertical>
 

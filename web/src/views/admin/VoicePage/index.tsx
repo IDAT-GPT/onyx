@@ -20,7 +20,11 @@ import {
   VoiceDisconnectModal,
   type ProviderMode,
 } from "@/views/admin/VoicePage/shared";
-import { getVoiceProviderDetail } from "@/lib/voice/utils";
+import {
+  getVoiceProviderDetail,
+  hasVoiceCredentials,
+  resolveModelId,
+} from "@/lib/voice/utils";
 import { VoiceProviderView } from "@/lib/voice/types";
 
 // Message keys, not copy — the literal union keeps `t()` statically checked.
@@ -31,7 +35,9 @@ type ModelSubtitleKey =
   | "models.tts1.subtitle"
   | "models.tts1Hd.subtitle"
   | "models.azureSpeechTts.subtitle"
-  | "models.elevenlabsTts.subtitle";
+  | "models.elevenlabsTts.subtitle"
+  | "models.openSourceStt.subtitle"
+  | "models.openSourceTts.subtitle";
 
 interface ModelDetails {
   id: string;
@@ -67,6 +73,12 @@ const STT_MODELS: ModelDetails[] = [
     label: "ElevenAPI",
     subtitleKey: "models.elevenlabsStt.subtitle",
     providerType: "elevenlabs",
+  },
+  {
+    id: "open-source-stt",
+    label: "Faster-Whisper",
+    subtitleKey: "models.openSourceStt.subtitle",
+    providerType: "custom",
   },
 ];
 
@@ -111,6 +123,18 @@ const TTS_PROVIDER_GROUPS: ProviderGroup[] = [
         label: "ElevenAPI",
         subtitleKey: "models.elevenlabsTts.subtitle",
         providerType: "elevenlabs",
+      },
+    ],
+  },
+  {
+    providerType: "custom",
+    providerLabel: "Open Source",
+    models: [
+      {
+        id: "open-source-tts",
+        label: "Kokoro",
+        subtitleKey: "models.openSourceTts.subtitle",
+        providerType: "custom",
       },
     ],
   },
@@ -227,12 +251,13 @@ export default function VoicePage() {
     mode: ProviderMode
   ): "disconnected" | "connected" | "selected" => {
     const provider = providersByType.get(model.providerType);
-    if (!provider || !provider.api_key) return "disconnected";
+    if (!provider || !hasVoiceCredentials(provider)) return "disconnected";
 
     const isActive =
       mode === "stt"
         ? provider.is_default_stt
-        : provider.is_default_tts && provider.tts_model === model.id;
+        : provider.is_default_tts &&
+          provider.tts_model === resolveModelId(model.id);
 
     if (isActive) return "selected";
     return "connected";
@@ -274,7 +299,8 @@ export default function VoicePage() {
                   hasAlternatives={
                     (providers ?? []).filter(
                       (p) =>
-                        p.provider_type !== model.providerType && !!p.api_key
+                        p.provider_type !== model.providerType &&
+                        hasVoiceCredentials(p)
                     ).length > 0
                   }
                   onSelect={() => {
@@ -330,15 +356,17 @@ export default function VoicePage() {
                         (providers ?? []).filter(
                           (p) =>
                             p.provider_type !== model.providerType &&
-                            !!p.api_key
+                            hasVoiceCredentials(p)
                         ).length > 0
                       }
                       onSelect={() => {
                         const p = providersByType.get(model.providerType);
                         if (p?.id)
-                          activateVoiceProvider(p.id, "tts", model.id).then(
-                            () => mutate()
-                          );
+                          activateVoiceProvider(
+                            p.id,
+                            "tts",
+                            resolveModelId(model.id)
+                          ).then(() => mutate());
                       }}
                       onDeselect={() => {
                         const p = providersByType.get(model.providerType);

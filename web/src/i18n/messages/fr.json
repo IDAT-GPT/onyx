@@ -6404,6 +6404,12 @@
         },
         "whisper": {
           "subtitle": "Modèle de reconnaissance vocale polyvalent d'OpenAI."
+        },
+        "openSourceStt": {
+          "subtitle": "Reconnaissance vocale Whisper auto-hébergée via un serveur compatible OpenAI (p. ex. Speaches)."
+        },
+        "openSourceTts": {
+          "subtitle": "Synthèse vocale Kokoro auto-hébergée via un serveur compatible OpenAI (p. ex. Speaches)."
         }
       },
       "setupModal": {
@@ -6411,7 +6417,9 @@
           "description": "Collez votre [clé d'API]({url}) de {provider} pour accéder à vos modèles.",
           "label": "Clé d'API",
           "placeholder": "Clé d'API",
-          "required": "La clé d'API est obligatoire"
+          "required": "La clé d'API est obligatoire",
+          "optionalDescription": "Facultatif — laissez vide si votre serveur auto-hébergé fonctionne sans authentification.",
+          "optionalPlaceholder": "Clé API (facultatif)"
         },
         "cancelButton": {
           "label": "Annuler"
@@ -6447,7 +6455,8 @@
         "targetUri": {
           "description": "Collez le point de terminaison affiché dans le [portail Azure (Keys and Endpoint)]({portalUrl}). IDAT-GPT en extrait la région de service vocal. Exemples : `https://westus.api.cognitive.microsoft.com/` ou `https://westus.tts.speech.microsoft.com/`.",
           "label": "URI cible",
-          "required": "L'URI cible est obligatoire"
+          "required": "L'URI cible est obligatoire",
+          "customDescription": "URL de base de votre serveur vocal auto-hébergé (API compatible OpenAI). Depuis ce déploiement, `http://host.docker.internal:8000` atteint un serveur sur l'hôte Docker."
         },
         "ttsModel": {
           "description": "Ce modèle sera utilisé par défaut par IDAT-GPT pour la synthèse vocale.",

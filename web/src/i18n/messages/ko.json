@@ -6404,6 +6404,12 @@
         },
         "whisper": {
           "subtitle": "OpenAI의 범용 음성 인식 모델."
+        },
+        "openSourceStt": {
+          "subtitle": "OpenAI 호환 서버(예: Speaches)를 통한 자체 호스팅 Whisper 음성 인식."
+        },
+        "openSourceTts": {
+          "subtitle": "OpenAI 호환 서버(예: Speaches)를 통한 자체 호스팅 Kokoro 음성 합성."
         }
       },
       "setupModal": {
@@ -6411,7 +6417,9 @@
           "description": "모델을 사용하려면 {provider}의 [API 키]({url})를 붙여넣으세요.",
           "label": "API 키",
           "placeholder": "API 키",
-          "required": "API 키가 필요합니다"
+          "required": "API 키가 필요합니다",
+          "optionalDescription": "선택 사항 — 자체 호스팅 서버가 인증 없이 실행되면 비워 두세요.",
+          "optionalPlaceholder": "API 키(선택 사항)"
         },
         "cancelButton": {
           "label": "취소"
@@ -6447,7 +6455,8 @@
         "targetUri": {
           "description": "[Azure Portal(키 및 엔드포인트)]({portalUrl})에 표시된 엔드포인트를 붙여넣으세요. IDAT-GPT는 이 URL에서 음성 지역을 추출합니다. 예: `https://westus.api.cognitive.microsoft.com/` 또는 `https://westus.tts.speech.microsoft.com/`.",
           "label": "대상 URI",
-          "required": "대상 URI가 필요합니다"
+          "required": "대상 URI가 필요합니다",
+          "customDescription": "자체 호스팅 음성 서버의 기본 URL(OpenAI 호환 API)입니다. 이 배포에서는 `http://host.docker.internal:8000`으로 Docker 호스트의 서버에 접근할 수 있습니다."
         },
         "ttsModel": {
           "description": "IDAT-GPT는 기본적으로 이 모델을 텍스트 음성 변환에 사용합니다.",

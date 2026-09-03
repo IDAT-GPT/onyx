@@ -66,5 +66,29 @@ def get_voice_provider(provider: VoiceProvider) -> VoiceProviderInterface:
             default_voice=default_voice,
         )
 
+    elif provider_type == "custom":
+        from onyx.voice.providers.custom import CustomVoiceProvider
+
+        return CustomVoiceProvider(
+            api_key=api_key,
+            api_base=api_base,
+            stt_model=stt_model,
+            tts_model=tts_model,
+            default_voice=default_voice,
+            custom_config=custom_config or {},
+        )
+
     else:
         raise ValueError(f"Unsupported voice provider type: {provider_type}")
+
+
+def voice_provider_requires_api_key(provider_type: str) -> bool:
+    """The open-source/self-hosted provider may run without authentication."""
+    return provider_type.lower() != "custom"
+
+
+def voice_provider_has_credentials(provider: VoiceProvider) -> bool:
+    """True when the provider can be used: has a key, or does not need one."""
+    return provider.api_key is not None or not voice_provider_requires_api_key(
+        provider.provider_type
+    )

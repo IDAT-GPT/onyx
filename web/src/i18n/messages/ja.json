@@ -6404,6 +6404,12 @@
         },
         "whisper": {
           "subtitle": "OpenAI の汎用音声認識モデル。"
+        },
+        "openSourceStt": {
+          "subtitle": "OpenAI互換サーバー（例: Speaches）によるセルフホスト型Whisper音声認識。"
+        },
+        "openSourceTts": {
+          "subtitle": "OpenAI互換サーバー（例: Speaches）によるセルフホスト型Kokoro音声合成。"
         }
       },
       "setupModal": {
@@ -6411,7 +6417,9 @@
           "description": "モデルにアクセスするには、{provider} の [API キー]({url}) を貼り付けてください。",
           "label": "API キー",
           "placeholder": "API キー",
-          "required": "API キーは必須です"
+          "required": "API キーは必須です",
+          "optionalDescription": "任意 — セルフホストサーバーが認証なしで動作する場合は空のままにしてください。",
+          "optionalPlaceholder": "APIキー（任意）"
         },
         "cancelButton": {
           "label": "キャンセル"
@@ -6447,7 +6455,8 @@
         "targetUri": {
           "description": "[Azure Portal（キーとエンドポイント）]({portalUrl}) に表示されるエンドポイントを貼り付けてください。IDAT-GPT はこの URL から音声リージョンを抽出します。例：`https://westus.api.cognitive.microsoft.com/` または `https://westus.tts.speech.microsoft.com/`。",
           "label": "ターゲット URI",
-          "required": "ターゲット URI は必須です"
+          "required": "ターゲット URI は必須です",
+          "customDescription": "セルフホスト型音声サーバーのベースURL（OpenAI互換API）。このデプロイからは `http://host.docker.internal:8000` でDockerホスト上のサーバーに到達できます。"
         },
         "ttsModel": {
           "description": "このモデルが、IDAT-GPT のテキスト読み上げでデフォルトとして使用されます。",

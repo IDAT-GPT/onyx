@@ -6404,6 +6404,12 @@
         },
         "whisper": {
           "subtitle": "OpenAI 的通用语音识别模型。"
+        },
+        "openSourceStt": {
+          "subtitle": "通过 OpenAI 兼容服务器（如 Speaches）自托管的 Whisper 语音识别。"
+        },
+        "openSourceTts": {
+          "subtitle": "通过 OpenAI 兼容服务器（如 Speaches）自托管的 Kokoro 语音合成。"
         }
       },
       "setupModal": {
@@ -6411,7 +6417,9 @@
           "description": "粘贴来自 {provider} 的 [API 密钥]({url})，以访问您的模型。",
           "label": "API 密钥",
           "placeholder": "API 密钥",
-          "required": "API 密钥为必填项"
+          "required": "API 密钥为必填项",
+          "optionalDescription": "可选 — 如果您的自托管服务器无需身份验证，请留空。",
+          "optionalPlaceholder": "API 密钥（可选）"
         },
         "cancelButton": {
           "label": "取消"
@@ -6447,7 +6455,8 @@
         "targetUri": {
           "description": "粘贴 [Azure Portal（密钥和终结点）]({portalUrl}) 中显示的终结点。IDAT-GPT 会从该 URL 中提取语音区域。示例：`https://westus.api.cognitive.microsoft.com/` 或 `https://westus.tts.speech.microsoft.com/`。",
           "label": "目标 URI",
-          "required": "目标 URI 为必填项"
+          "required": "目标 URI 为必填项",
+          "customDescription": "您自托管语音服务器的基础 URL（OpenAI 兼容 API）。在此部署中，`http://host.docker.internal:8000` 可访问 Docker 主机上的服务器。"
         },
         "ttsModel": {
           "description": "IDAT-GPT 将默认使用此模型进行文字转语音。",

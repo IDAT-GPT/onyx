@@ -22,7 +22,10 @@ from onyx.redis.redis_pool import WsTokenRateLimitExceeded, store_ws_token
 from onyx.server.manage.models import VoiceSettingsUpdateRequest
 from onyx.server.manage.voice.text_utils import strip_markdown_for_tts
 from onyx.utils.logger import setup_logger
-from onyx.voice.factory import get_voice_provider
+from onyx.voice.factory import (
+    get_voice_provider,
+    voice_provider_has_credentials,
+)
 
 logger = setup_logger()
 
@@ -48,8 +51,10 @@ def get_voice_status(
     stt_provider = fetch_default_stt_provider(db_session)
     tts_provider = fetch_default_tts_provider(db_session)
     return VoiceStatusResponse(
-        stt_enabled=stt_provider is not None and stt_provider.api_key is not None,
-        tts_enabled=tts_provider is not None and tts_provider.api_key is not None,
+        stt_enabled=stt_provider is not None
+        and voice_provider_has_credentials(stt_provider),
+        tts_enabled=tts_provider is not None
+        and voice_provider_has_credentials(tts_provider),
     )
 
 
@@ -67,7 +72,7 @@ async def transcribe_audio(
             "No speech-to-text provider configured. Please contact your administrator.",
         )
 
-    if not provider_db.api_key:
+    if not voice_provider_has_credentials(provider_db):
         raise OnyxError(
             OnyxErrorCode.VALIDATION_ERROR,
             "Voice provider API key not configured.",
@@ -166,7 +171,7 @@ async def synthesize_speech(
                 "No text-to-speech provider configured. Please contact your administrator.",
             )
 
-        if not provider_db.api_key:
+        if not voice_provider_has_credentials(provider_db):
             logger.error("TTS provider has no API key")
             raise OnyxError(
                 OnyxErrorCode.VALIDATION_ERROR,

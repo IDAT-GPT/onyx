@@ -136,6 +136,28 @@ export const VOICE_PROVIDER_DETAILS: Record<string, VoiceProviderDetail> = {
       label: "ElevenLabs",
     },
   },
+  custom: {
+    label: "Open Source (self-hosted)",
+    icon: SvgMicrophone,
+    docsUrl: "https://speaches.ai/",
+    voiceDocsUrl: {
+      url: "https://speaches.ai/usage/text-to-speech/",
+      label: "Speaches",
+    },
+    sttModels: [
+      {
+        id: "Systran/faster-whisper-large-v3",
+        name: "Faster-Whisper Large v3",
+      },
+      {
+        id: "deepdml/faster-whisper-large-v3-turbo-ct2",
+        name: "Faster-Whisper Large v3 Turbo",
+      },
+      { id: "Systran/faster-whisper-medium", name: "Faster-Whisper Medium" },
+      { id: "Systran/faster-whisper-small", name: "Faster-Whisper Small" },
+    ],
+    ttsModels: [{ id: "speaches-ai/Kokoro-82M-v1.0-ONNX", name: "Kokoro 82M" }],
+  },
 };
 
 /** Returns the detail entry for a provider type, falling back to a generic entry for unknown types. */
@@ -153,9 +175,19 @@ export function getVoiceProviderDetail(
 /** Maps card-level model IDs to actual API model IDs. IDs absent from this map are used as-is. */
 export const MODEL_ID_MAP: Record<string, string> = {
   whisper: "whisper-1",
+  "open-source-stt": "Systran/faster-whisper-large-v3",
+  "open-source-tts": "speaches-ai/Kokoro-82M-v1.0-ONNX",
 };
 
 /** Resolves a card-level model ID to the API model ID expected by the backend. */
 export function resolveModelId(cardId: string): string {
   return MODEL_ID_MAP[cardId] ?? cardId;
+}
+
+/** The self-hosted provider may run without an API key; everything else needs one. */
+export function hasVoiceCredentials(provider: {
+  api_key: string | null;
+  provider_type: string;
+}): boolean {
+  return !!provider.api_key || provider.provider_type === "custom";
 }

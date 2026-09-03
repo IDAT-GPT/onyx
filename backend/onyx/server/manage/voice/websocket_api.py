@@ -17,7 +17,10 @@ from onyx.db.models import User
 from onyx.db.voice import fetch_default_stt_provider, fetch_default_tts_provider
 from onyx.server.manage.voice.text_utils import strip_markdown_for_tts
 from onyx.utils.logger import setup_logger
-from onyx.voice.factory import get_voice_provider
+from onyx.voice.factory import (
+    get_voice_provider,
+    voice_provider_has_credentials,
+)
 from onyx.voice.interface import (
     StreamingSynthesizerProtocol,
     StreamingTranscriberProtocol,
@@ -518,7 +521,7 @@ async def websocket_transcribe(
                 )
                 return
 
-            if not provider_db.api_key:
+            if not voice_provider_has_credentials(provider_db):
                 logger.warning("WebSocket transcribe: STT provider has no API key")
                 await websocket.send_json(
                     {
@@ -917,7 +920,7 @@ async def websocket_synthesize(
                 )
                 return
 
-            if not provider_db.api_key:
+            if not voice_provider_has_credentials(provider_db):
                 logger.warning("WebSocket synthesize: TTS provider has no API key")
                 await websocket.send_json(
                     {

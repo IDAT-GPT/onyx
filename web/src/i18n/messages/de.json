@@ -6404,6 +6404,12 @@
         },
         "whisper": {
           "subtitle": "Allzweck-Spracherkennungsmodell von OpenAI."
+        },
+        "openSourceStt": {
+          "subtitle": "Selbst gehostete Whisper-Spracherkennung über einen OpenAI-kompatiblen Server (z. B. Speaches)."
+        },
+        "openSourceTts": {
+          "subtitle": "Selbst gehostete Kokoro-Sprachausgabe über einen OpenAI-kompatiblen Server (z. B. Speaches)."
         }
       },
       "setupModal": {
@@ -6411,7 +6417,9 @@
           "description": "Fügen Sie Ihren [API-Schlüssel]({url}) von {provider} ein, um auf Ihre Modelle zuzugreifen.",
           "label": "API-Schlüssel",
           "placeholder": "API-Schlüssel",
-          "required": "API-Schlüssel ist erforderlich"
+          "required": "API-Schlüssel ist erforderlich",
+          "optionalDescription": "Optional — leer lassen, wenn Ihr selbst gehosteter Server ohne Authentifizierung läuft.",
+          "optionalPlaceholder": "API-Schlüssel (optional)"
         },
         "cancelButton": {
           "label": "Abbrechen"
@@ -6447,7 +6455,8 @@
         "targetUri": {
           "description": "Fügen Sie den Endpunkt ein, der im [Azure Portal (Keys and Endpoint)]({portalUrl}) angezeigt wird. IDAT-GPT extrahiert die Sprachregion aus dieser URL. Beispiele: `https://westus.api.cognitive.microsoft.com/` oder `https://westus.tts.speech.microsoft.com/`.",
           "label": "Ziel-URI",
-          "required": "Ziel-URI ist erforderlich"
+          "required": "Ziel-URI ist erforderlich",
+          "customDescription": "Basis-URL Ihres selbst gehosteten Sprachservers (OpenAI-kompatible API). Aus diesem Deployment erreicht `http://host.docker.internal:8000` einen Server auf dem Docker-Host."
         },
         "ttsModel": {
           "description": "Dieses Modell wird von IDAT-GPT standardmäßig für Text-zu-Sprache verwendet.",

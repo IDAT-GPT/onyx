@@ -29,7 +29,11 @@ from onyx.server.manage.voice.models import (
 from onyx.utils.encryption import mask_string
 from onyx.utils.logger import setup_logger
 from onyx.utils.url import SSRFException, validate_outbound_http_url
-from onyx.voice.factory import get_voice_provider
+from onyx.voice.factory import (
+    get_voice_provider,
+    voice_provider_has_credentials,
+    voice_provider_requires_api_key,
+)
 
 logger = setup_logger()
 
@@ -45,7 +49,7 @@ def _validate_voice_api_base(provider_type: str, api_base: str | None) -> str | 
     if api_base is None:
         return None
 
-    allow_private_network = provider_type.lower() == "azure"
+    allow_private_network = provider_type.lower() in ("azure", "custom")
     try:
         return validate_outbound_http_url(
             api_base, allow_private_network=allow_private_network
@@ -241,7 +245,7 @@ async def test_voice_provider(
             )
         api_key = existing_provider.api_key.get_value(apply_mask=False)
 
-    if not api_key:
+    if not api_key and voice_provider_requires_api_key(request.provider_type):
         raise OnyxError(
             OnyxErrorCode.VALIDATION_ERROR,
             "API key is required. Either provide api_key or set use_stored_key to true.",
@@ -293,7 +297,7 @@ def get_provider_voices(
     if provider_db is None:
         raise OnyxError(OnyxErrorCode.NOT_FOUND, "Voice provider not found.")
 
-    if not provider_db.api_key:
+    if not voice_provider_has_credentials(provider_db):
         raise OnyxError(
             OnyxErrorCode.VALIDATION_ERROR, "Provider has no API key configured."
         )
