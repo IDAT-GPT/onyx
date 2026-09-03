@@ -17,7 +17,7 @@ export default function CraftLlmLockedState() {
       <ContentAction
         icon={SvgLock}
         title="An LLM provider is required"
-        description="Onyx Craft needs a model provider, and only admins can set one up. Ask your admin to connect Anthropic, OpenAI, or OpenRouter."
+        description="IDAT-GPT Craft needs a model provider, and only admins can set one up. Ask your admin to connect Anthropic, OpenAI, or OpenRouter."
         sizePreset="main-ui"
         variant="section"
         padding={2}

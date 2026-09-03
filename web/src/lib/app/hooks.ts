@@ -3,7 +3,11 @@
 import { useLayoutEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useSettings } from "@/lib/settings/hooks";
-import { APP_SLOGAN } from "@/lib/constants";
+import {
+  APP_SLOGAN,
+  DEFAULT_APPLICATION_NAME,
+  UPSTREAM_PLATFORM_NAME,
+} from "@/lib/constants";
 import useAppFocus from "@/hooks/useAppFocus";
 import useChatSessions from "@/hooks/useChatSessions";
 import { useCurrentSessionPersonaId } from "@/app/app/stores/useChatSessionStore";
@@ -14,7 +18,11 @@ export function useCustomFooterContent(): string {
   const settings = useSettings();
   return (
     settings.enterprise?.custom_lower_disclaimer_content ||
-    `[Onyx ${settings.version ?? "dev"}](https://www.onyx.app/) - ${APP_SLOGAN}`
+    `[${DEFAULT_APPLICATION_NAME} powered by ${UPSTREAM_PLATFORM_NAME}${
+      settings.version && settings.version !== "Development"
+        ? ` ${settings.version}`
+        : ""
+    }](https://www.onyx.app/) - ${APP_SLOGAN}`
   );
 }
 

@@ -7,6 +7,7 @@ import useCCPairs from "@/hooks/useCCPairs";
 import { errorHandlingFetcher } from "@/lib/fetcher";
 import { SWR_KEYS } from "@/lib/swr-keys";
 import { isAuthPath } from "@/lib/auth/paths";
+import { DEFAULT_APPLICATION_NAME } from "@/lib/constants";
 import {
   ApplicationStatus,
   AppSettings,
@@ -103,7 +104,7 @@ export function useSettings(): AppSettings {
   return {
     ...core,
     enterprise: enterprise ?? null,
-    appName: enterprise?.application_name?.trim() || "Onyx",
+    appName: enterprise?.application_name?.trim() || DEFAULT_APPLICATION_NAME,
     logoUrl: enterprise?.use_custom_logo
       ? `/api/enterprise-settings/logo?v=${logoBuster}`
       : null,

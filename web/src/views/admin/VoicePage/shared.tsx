@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { SvgOnyxLogo } from "@opal/logos";
+import { SvgIdatGptLogo } from "@opal/logos";
 import { Modal } from "@opal/components";
 import { ConfirmationModalLayout } from "@opal/layouts";
 import InputComboBoxField from "@/refresh-components/form/InputComboBoxField";
@@ -249,7 +249,7 @@ export function VoiceProviderSetupModal({
               <Modal.Header
                 icon={detail.icon}
                 moreIcon1={SvgArrowExchange}
-                moreIcon2={SvgOnyxLogo}
+                moreIcon2={SvgIdatGptLogo}
                 title={
                   isEditing
                     ? t("setupModal.editHeader.title", {

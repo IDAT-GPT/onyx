@@ -280,7 +280,8 @@ export const AppearanceThemeSettings = forwardRef<
               />
             </FormField.Control>
             <FormField.Description>
-              This name will show across the app and replace "Onyx" in the UI.
+              This name will show across the app and replace "IDAT-GPT" in the
+              UI.
             </FormField.Description>
             <FormField.Message
               messages={{ error: errors.application_name as string }}
@@ -552,8 +553,8 @@ export const AppearanceThemeSettings = forwardRef<
               />
             </FormField.Control>
             <FormField.Description>
-              Add a custom help link in the user menu in addition to the Onyx
-              documentation.
+              Add a custom help link in the user menu in addition to the
+              IDAT-GPT documentation.
             </FormField.Description>
             <FormField.Message
               messages={{ error: errors.custom_help_link_url as string }}

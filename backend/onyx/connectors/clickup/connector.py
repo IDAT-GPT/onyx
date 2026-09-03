@@ -33,6 +33,7 @@ class ClickupConnector(LoadConnector, PollConnector):
         connector_type: str | None = None,
         connector_ids: list[str] | None = None,
         retrieve_task_comments: bool = True,
+        include_subtasks: bool = True,
     ) -> None:
         self.batch_size = batch_size
         self.api_token = api_token
@@ -40,6 +41,7 @@ class ClickupConnector(LoadConnector, PollConnector):
         self.connector_type = connector_type if connector_type else "workspace"
         self.connector_ids = connector_ids
         self.retrieve_task_comments = retrieve_task_comments
+        self.include_subtasks = include_subtasks
 
     def load_credentials(self, credentials: dict[str, Any]) -> dict[str, Any] | None:
         self.api_token = credentials["clickup_api_token"]
@@ -90,6 +92,10 @@ class ClickupConnector(LoadConnector, PollConnector):
             "include_closed": "true",
             "page": page,
         }
+
+        # The filtered team tasks endpoint excludes subtasks unless asked.
+        if self.include_subtasks:
+            params["subtasks"] = "true"
 
         if start is not None:
             params["date_updated_gt"] = start
@@ -179,6 +185,12 @@ class ClickupConnector(LoadConnector, PollConnector):
                 for extra_field in extra_fields:
                     if extra_field in task and task[extra_field] is not None:
                         document.metadata[extra_field] = task[extra_field]
+
+                # Subtasks carry the id of their parent task; top-level tasks have
+                # parent=None. Keep the link so answers can point at the parent.
+                parent_task_id = task.get("parent")
+                if parent_task_id:
+                    document.metadata["parent_task_id"] = str(parent_task_id)
 
                 if self.retrieve_task_comments:
                     document.sections = [

@@ -72,7 +72,7 @@ export default function CustomAnalyticsUpdateForm() {
             For security reasons, you must provide a secret key to update this
             script. This should be the value of the{" "}
             <i>CUSTOM_ANALYTICS_SECRET_KEY</i> environment variable set when
-            initially setting up Onyx.
+            initially setting up IDAT-GPT.
           </>
         </SubLabel>
         <input

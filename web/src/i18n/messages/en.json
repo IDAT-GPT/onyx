@@ -251,7 +251,7 @@
         },
         "placeholder": "Select method",
         "ptOauth": {
-          "description": "Forward the user's OAuth access token used to authenticate Onyx.",
+          "description": "Forward the user's OAuth access token used to authenticate IDAT-GPT.",
           "label": "OAuth Pass-through"
         },
         "required": "Authentication type is required"
@@ -290,11 +290,11 @@
         "title": "No authentication for this MCP server"
       },
       "oauthInfo": {
-        "discovery": "Client ID and secret are optional. During automatic discovery, Onyx uses a Client ID Metadata Document (CIMD) when supported and falls back to Dynamic Client Registration (DCR).",
-        "manualRegistration": "If your server supports neither method, register your Onyx instance with the server provider first. Grant Onyx the necessary scopes for your actions."
+        "discovery": "Client ID and secret are optional. During automatic discovery, IDAT-GPT uses a Client ID Metadata Document (CIMD) when supported and falls back to Dynamic Client Registration (DCR).",
+        "manualRegistration": "If your server supports neither method, register your IDAT-GPT instance with the server provider first. Grant IDAT-GPT the necessary scopes for your actions."
       },
       "passThroughNotice": {
-        "description": "Onyx will forward the user's OAuth access token directly to the server as an Authorization header. Make sure the server supports authentication with the same provider.",
+        "description": "IDAT-GPT will forward the user's OAuth access token directly to the server as an Authorization header. Make sure the server supports authentication with the same provider.",
         "title": "Use pass-through for services with shared identity provider."
       },
       "providerMode": {
@@ -401,7 +401,7 @@
         },
         "placeholder": "Select method",
         "ptOauth": {
-          "description": "Forward the user's OAuth access token used to authenticate Onyx.",
+          "description": "Forward the user's OAuth access token used to authenticate IDAT-GPT.",
           "label": "OAuth Pass-through"
         },
         "required": "Authentication method is required"
@@ -449,7 +449,7 @@
         "description": "OAuth pass-through requires an OAuth-capable login method (Google or OIDC)."
       },
       "passThroughNotice": {
-        "description": "Onyx will forward the user's OAuth access token directly to the server as an Authorization header. Make sure the server supports authentication with the same provider.",
+        "description": "IDAT-GPT will forward the user's OAuth access token directly to the server as an Authorization header. Make sure the server supports authentication with the same provider.",
         "title": "Use pass-through for services with shared identity provider."
       },
       "redirectUri": {
@@ -811,7 +811,7 @@
         "title": "Feedback"
       },
       "page": {
-        "description": "Understand how your workspace uses Onyx across queries, feedback, and agents."
+        "description": "Understand how your workspace uses IDAT-GPT across queries, feedback, and agents."
       },
       "reports": {
         "calendar": {
@@ -1030,7 +1030,7 @@
         "close": {
           "label": "Close"
         },
-        "description": "Manually add and activate a license for this Onyx instance.",
+        "description": "Manually add and activate a license for this IDAT-GPT instance.",
         "emptyKey": {
           "error": "Please enter a license key"
         },
@@ -1337,7 +1337,7 @@
           "placeholder": "In days",
           "restoreTooltip": "Restore Default"
         },
-        "description": "Specify how long Onyx should retain chats in your organization.",
+        "description": "Specify how long IDAT-GPT should retain chats in your organization.",
         "enterprisePlanTag": {
           "label": "Enterprise Plan"
         },
@@ -1399,7 +1399,7 @@
       },
       "teamContext": {
         "description": "Users can also provide additional individual context in their personal settings.",
-        "placeholder": "Describe your team and how Onyx should behave.",
+        "placeholder": "Describe your team and how IDAT-GPT should behave.",
         "title": "Team Context"
       },
       "teamName": {
@@ -2483,7 +2483,7 @@
         "title": "No users found"
       },
       "header": {
-        "description": "Control who can use Craft, Onyx's agentic app builder.",
+        "description": "Control who can use Craft, IDAT-GPT's agentic app builder.",
         "title": "Access"
       },
       "perUserAccess": {
@@ -2795,7 +2795,7 @@
       },
       "page": {
         "header": {
-          "description": "Connect Onyx to your Discord servers. Users can ask questions directly in Discord channels."
+          "description": "Connect IDAT-GPT to your Discord servers. Users can ask questions directly in Discord channels."
         }
       },
       "registrationKey": {
@@ -2832,7 +2832,7 @@
           "label": "Delete API Key"
         },
         "deleteHint": "Delete the current API key before updating.",
-        "description": "Unstructured extracts and transforms complex data from formats like .pdf, .docx, .png, .pptx, etc. into clean text for Onyx to ingest. Provide an API key to enable Unstructured document processing.",
+        "description": "Unstructured extracts and transforms complex data from formats like .pdf, .docx, .png, .pptx, etc. into clean text for IDAT-GPT to ingest. Provide an API key to enable Unstructured document processing.",
         "learnMore": "Learn more about Unstructured <link>here</link>.",
         "note": "<label>Note:</label> this will send documents to Unstructured servers for processing.",
         "saveButton": {
@@ -2909,7 +2909,7 @@
         "deleteScheduled": {
           "toast": "Document set \"{name}\" scheduled for deletion"
         },
-        "description": "**Document Sets** allow you to group logically connected documents into a single bundle. These can then be used as a filter when performing searches to control the scope of information Onyx searches over.",
+        "description": "**Document Sets** allow you to group logically connected documents into a single bundle. These can then be used as a filter when performing searches to control the scope of information IDAT-GPT searches over.",
         "edit": {
           "header": {
             "title": "Edit Document Set"
@@ -3216,7 +3216,7 @@
           "tooltip": "Document embeddings are being updated due to recent changes to this group."
         },
         "systemGroup": {
-          "description": "Onyx manages this group. Members are the only thing it holds, and the only thing you can change.",
+          "description": "IDAT-GPT manages this group. Members are the only thing it holds, and the only thing you can change.",
           "title": "System group"
         },
         "toasts": {
@@ -3329,7 +3329,7 @@
         }
       },
       "permissionsChanged": {
-        "description": "Onyx now uses group-based permissions. Access is configured per group, so a user's permissions are the combination of every group they belong to.",
+        "description": "IDAT-GPT now uses group-based permissions. Access is configured per group, so a user's permissions are the combination of every group they belong to.",
         "learnMore": {
           "label": "Learn more"
         },
@@ -3476,7 +3476,7 @@
           "message": "API key validation failed"
         },
         "authMethod": {
-          "idle": "Choose how Onyx should authenticate with Google Vertex AI.",
+          "idle": "Choose how IDAT-GPT should authenticate with Google Vertex AI.",
           "label": "Authentication Method",
           "required": "Authentication method is required",
           "serviceAccount": {
@@ -3520,7 +3520,7 @@
           "required": "Location is required"
         },
         "projectId": {
-          "idle": "The GCP project where Vertex AI is enabled. Onyx authenticates with the pod's bound service account (GKE Workload Identity).",
+          "idle": "The GCP project where Vertex AI is enabled. IDAT-GPT authenticates with the pod's bound service account (GKE Workload Identity).",
           "label": "GCP Project ID",
           "required": "Project ID is required"
         },
@@ -3608,7 +3608,7 @@
           "title": "Deployment Name"
         },
         "modelName": {
-          "description": "A label for this model in Onyx. Azure routes requests by deployment name, so this only needs to be a unique identifier."
+          "description": "A label for this model in IDAT-GPT. Azure routes requests by deployment name, so this only needs to be a unique identifier."
         },
         "targetUrl": {
           "title": "Target URL"
@@ -3659,7 +3659,7 @@
         "cloudManaged": {
           "title": "Embedding model and settings are managed by Onyx Cloud."
         },
-        "description": "Onyx uses this model to encode documents for search and retrieval.",
+        "description": "IDAT-GPT uses this model to encode documents for search and retrieval.",
         "title": "Embedding Model"
       },
       "errorsModal": {
@@ -3707,7 +3707,7 @@
         },
         "modelName": {
           "placeholder": "model-name",
-          "selfHostedDescription": "Onyx will connect to this model on your self-hosted endpoint.",
+          "selfHostedDescription": "IDAT-GPT will connect to this model on your self-hosted endpoint.",
           "title": "Model Name"
         },
         "normalize": {
@@ -3751,7 +3751,7 @@
           "title": "API Base URL"
         },
         "modelName": {
-          "description": "Onyx will connect to this model on your {provider} proxy."
+          "description": "IDAT-GPT will connect to this model on your {provider} proxy."
         }
       },
       "maxImageSize": {
@@ -4123,7 +4123,7 @@
         "title": "New LLM configuration temporarily unavailable."
       },
       "defaultModel": {
-        "description": "This model will be used by Onyx by default in your chats.",
+        "description": "This model will be used by IDAT-GPT by default in your chats.",
         "title": "Default Model"
       },
       "deleteModal": {
@@ -4211,7 +4211,7 @@
               "description": "For non-AWS environments",
               "label": "Access Key"
             },
-            "description": "Choose how Onyx should authenticate with Bedrock.",
+            "description": "Choose how IDAT-GPT should authenticate with Bedrock.",
             "iam": {
               "description": "Recommended for AWS environments",
               "label": "Environment IAM Role"
@@ -4223,7 +4223,7 @@
             "title": "Authentication Method"
           },
           "iamNotice": {
-            "title": "Onyx will use the IAM role attached to the environment it’s running in to authenticate."
+            "title": "IDAT-GPT will use the IAM role attached to the environment it’s running in to authenticate."
           },
           "longTermApiKeyField": {
             "placeholder": "Your long-term API key",
@@ -4491,7 +4491,7 @@
         },
         "setup": {
           "apiBaseField": {
-            "containerizedNote": "With Onyx running in a container, use `host.docker.internal` in place of `localhost` to reach a service on your host.",
+            "containerizedNote": "With IDAT-GPT running in a container, use `host.docker.internal` in place of `localhost` to reach a service on your host.",
             "title": "API Base URL"
           },
           "apiKeyField": {
@@ -4544,7 +4544,7 @@
         },
         "vertexAi": {
           "authMethodField": {
-            "description": "Choose how Onyx should authenticate with Google Vertex AI.",
+            "description": "Choose how IDAT-GPT should authenticate with Google Vertex AI.",
             "serviceAccount": {
               "description": "Upload a GCP service account key JSON file",
               "label": "Service Account JSON"
@@ -4573,7 +4573,7 @@
             "projectRequired": "GCP Project ID is required"
           },
           "workloadIdentityNotice": {
-            "title": "Onyx will use the pod's ambient Google Cloud credentials (via google.auth.default). Ensure the Kubernetes ServiceAccount is bound to a GCP Service Account with access to Vertex AI."
+            "title": "IDAT-GPT will use the pod's ambient Google Cloud credentials (via google.auth.default). Ensure the Kubernetes ServiceAccount is bound to a GCP Service Account with access to Vertex AI."
           }
         }
       },
@@ -4639,7 +4639,7 @@
         },
         "requestSentBody": "Your join request has been sent. You can explore as your own team while waiting for an admin of {domain} to approve your request.",
         "tryOnyxButton": {
-          "label": "Try Onyx while waiting"
+          "label": "Try IDAT-GPT while waiting"
         }
       },
       "newTenant": {
@@ -5018,7 +5018,7 @@
     },
     "serviceAccounts": {
       "deleteModal": {
-        "description": "Any application using the API key of account *{name}* (`{keyDisplay}`) will lose access to Onyx.",
+        "description": "Any application using the API key of account *{name}* (`{keyDisplay}`) will lose access to IDAT-GPT.",
         "submit": {
           "label": "Delete"
         },
@@ -5065,7 +5065,7 @@
         "cancelButton": {
           "label": "Cancel"
         },
-        "description": "Use service account API key to programmatically access Onyx API with user-level permissions. You can modify the account details later.",
+        "description": "Use service account API key to programmatically access IDAT-GPT API with user-level permissions. You can modify the account details later.",
         "groups": {
           "empty": {
             "description": "No groups assigned to this service account.",
@@ -5127,7 +5127,7 @@
         }
       },
       "page": {
-        "description": "Use service accounts to programmatically access Onyx API.",
+        "description": "Use service accounts to programmatically access IDAT-GPT API.",
         "error": {
           "description": "Please check the console for more details.",
           "title": "Failed to load service accounts."
@@ -5197,7 +5197,7 @@
         }
       },
       "liteModeNotice": {
-        "description": "This deployment runs Onyx Lite, which has no vector database — connectors and document indexing are disabled, and nothing is indexed. To connect data sources and index documents, deploy Onyx in **Standard mode**. See the [deployment guide]({docsUrl}) to get started.",
+        "description": "This deployment runs Onyx Lite, which has no vector database — connectors and document indexing are disabled, and nothing is indexed. To connect data sources and index documents, deploy IDAT-GPT in **Standard mode**. See the [deployment guide]({docsUrl}) to get started.",
         "title": "Indexing is unavailable in Lite mode"
       },
       "providerCard": {
@@ -5451,7 +5451,7 @@
         },
         "showContinueInWebUi": {
           "label": "Show Continue in Web UI button",
-          "tooltip": "If set, will show a button at the bottom of the response that allows the user to continue the conversation in the Onyx Web UI"
+          "tooltip": "If set, will show a button at the bottom of the response that allows the user to continue the conversation in the IDAT-GPT Web UI"
         },
         "stillNeedHelp": {
           "label": "Give a \"Still need help?\" button",
@@ -5481,7 +5481,7 @@
         "autoAnswer": {
           "item": "Setup OnyxBot to automatically answer questions in certain channels."
         },
-        "description": "Setup Slack bots that connect to Onyx. Once setup, you will be able to ask questions to Onyx directly from Slack. Additionally, you can:",
+        "description": "Setup Slack bots that connect to IDAT-GPT. Once setup, you will be able to ask questions to IDAT-GPT directly from Slack. Additionally, you can:",
         "directMessage": {
           "item": "Directly message OnyxBot to search just as you would in the web UI."
         },
@@ -5524,7 +5524,7 @@
           "badge": "Disabled"
         },
         "empty": {
-          "message": "Please add a New Slack Bot to begin chatting with Onyx!"
+          "message": "Please add a New Slack Bot to begin chatting with IDAT-GPT!"
         },
         "enabled": {
           "badge": "Enabled"
@@ -6063,7 +6063,7 @@
         }
       },
       "activateModal": {
-        "description": "<strong>{email}</strong> will regain access to Onyx.",
+        "description": "<strong>{email}</strong> will regain access to IDAT-GPT.",
         "submit": {
           "label": "Activate"
         },
@@ -6073,7 +6073,7 @@
         }
       },
       "cancelInviteModal": {
-        "description": "<strong>{email}</strong> will no longer be able to join Onyx with this invite.",
+        "description": "<strong>{email}</strong> will no longer be able to join IDAT-GPT with this invite.",
         "submit": {
           "label": "Cancel Invite"
         },
@@ -6083,7 +6083,7 @@
         }
       },
       "deactivateModal": {
-        "description": "<strong>{email}</strong> will immediately lose access to Onyx. Their sessions and agents will be preserved. Their license seat will be freed. You can reactivate this account later.",
+        "description": "<strong>{email}</strong> will immediately lose access to IDAT-GPT. Their sessions and agents will be preserved. Their license seat will be freed. You can reactivate this account later.",
         "submit": {
           "label": "Deactivate"
         },
@@ -6093,7 +6093,7 @@
         }
       },
       "deleteModal": {
-        "description": "<strong>{email}</strong> will be permanently removed from Onyx. All of their session history will be deleted. Deletion cannot be undone.",
+        "description": "<strong>{email}</strong> will be permanently removed from IDAT-GPT. All of their session history will be deleted. Deletion cannot be undone.",
         "submit": {
           "label": "Delete"
         },
@@ -6218,7 +6218,7 @@
         "title": "Users & Requests"
       },
       "permissionsNotice": {
-        "description": "Onyx now uses group-based permissions. The Curator and Global Curator roles have been replaced by configurable group permissions, with per-group managers for scoped administration.",
+        "description": "IDAT-GPT now uses group-based permissions. The Curator and Global Curator roles have been replaced by configurable group permissions, with per-group managers for scoped administration.",
         "learnMoreButton": {
           "label": "Learn more"
         },
@@ -6445,12 +6445,12 @@
           "label": "STT Model"
         },
         "targetUri": {
-          "description": "Paste the endpoint shown in [Azure Portal (Keys and Endpoint)]({portalUrl}). Onyx extracts the speech region from this URL. Examples: `https://westus.api.cognitive.microsoft.com/` or `https://westus.tts.speech.microsoft.com/`.",
+          "description": "Paste the endpoint shown in [Azure Portal (Keys and Endpoint)]({portalUrl}). IDAT-GPT extracts the speech region from this URL. Examples: `https://westus.api.cognitive.microsoft.com/` or `https://westus.tts.speech.microsoft.com/`.",
           "label": "Target URI",
           "required": "Target URI is required"
         },
         "ttsModel": {
-          "description": "This model will be used by Onyx by default for text-to-speech.",
+          "description": "This model will be used by IDAT-GPT by default for text-to-speech.",
           "label": "Default Model"
         },
         "updateButton": {
@@ -6513,7 +6513,7 @@
           "message": "{label} disconnected"
         },
         "fallback": {
-          "description": "Onyx will fall back to the built-in web crawler."
+          "description": "IDAT-GPT will fall back to the built-in web crawler."
         },
         "header": {
           "description": "This will remove the stored credentials for this provider.",
@@ -6739,7 +6739,7 @@
           "title": "Conversation Starters"
         },
         "defaultModel": {
-          "description": "This model will be used by Onyx by default in your chats.",
+          "description": "This model will be used by IDAT-GPT by default in your chats.",
           "title": "Default Model"
         },
         "featured": {
@@ -6805,7 +6805,7 @@
         "text": "Be invited to an existing Onyx team"
       },
       "notFound": {
-        "description": "We couldn't find your account in our records. To access Onyx, you need to either:"
+        "description": "We couldn't find your account in our records. To access IDAT-GPT, you need to either:"
       },
       "signInLink": {
         "label": "Sign in"
@@ -7035,7 +7035,7 @@
         "label": "How did you hear about us?"
       },
       "subtitle": {
-        "text": "Get started with Onyx"
+        "text": "Get started with IDAT-GPT"
       }
     },
     "verifyEmail": {
@@ -7205,7 +7205,7 @@
       },
       "healthBanner": {
         "backendUnavailable": {
-          "description": "If this is your initial setup or you just updated your Onyx deployment, this is likely because the backend is still starting up. Give it a minute or two, and then refresh the page. If that does not work, make sure the backend is setup and/or contact an administrator.",
+          "description": "If this is your initial setup or you just updated your IDAT-GPT deployment, this is likely because the backend is still starting up. Give it a minute or two, and then refresh the page. If that does not work, make sure the backend is setup and/or contact an administrator.",
           "title": "The backend is currently unavailable"
         }
       },
@@ -7310,7 +7310,7 @@
           "placeholder": "How can I help you today?",
           "queuedPlaceholder": "Press up to edit queued messages",
           "searchPlaceholder": "Search connected sources",
-          "speakingPlaceholder": "Onyx is speaking..."
+          "speakingPlaceholder": "IDAT-GPT is speaking..."
         },
         "sendButton": {
           "processingFilesTooltip": "Waiting for attached file(s) to finish processing"
@@ -7431,7 +7431,7 @@
       },
       "sharedAppInputBar": {
         "input": {
-          "placeholder": "How can Onyx help you today"
+          "placeholder": "How can IDAT-GPT help you today"
         },
         "startSessionButton": {
           "label": "Start New Session"
@@ -8358,7 +8358,7 @@
         "error": "You need to agree to the terms to access the application."
       },
       "header": {
-        "title": "Welcome to Onyx!"
+        "title": "Welcome to IDAT-GPT!"
       },
       "logoIcon": {
         "alt": "Logo"
@@ -8514,7 +8514,7 @@
         "placeholder": "Filter files..."
       },
       "processing": {
-        "description": "Onyx is still processing your uploaded files. You can create the agent now, but it will not have access to all files until processing completes."
+        "description": "IDAT-GPT is still processing your uploaded files. You can create the agent now, but it will not have access to all files until processing completes."
       }
     },
     "search": {
@@ -8593,7 +8593,7 @@
         "button": {
           "label": "Web Search"
         },
-        "description": "Enable Onyx to search the internet for information.",
+        "description": "Enable IDAT-GPT to search the internet for information.",
         "title": "Select web search provider"
       }
     },
@@ -8633,7 +8633,7 @@
       "input": {
         "placeholder": "Your name"
       },
-      "title": "What should Onyx call you?"
+      "title": "What should IDAT-GPT call you?"
     },
     "nonAdminStep": {
       "confirmation": {
@@ -8751,7 +8751,7 @@
         "searchPlaceholder": "Search..."
       },
       "revokeModal": {
-        "description": "Any application using the token {name} ({tokenDisplay}) will lose access to Onyx. This action cannot be undone.",
+        "description": "Any application using the token {name} ({tokenDisplay}) will lose access to IDAT-GPT. This action cannot be undone.",
         "question": "Are you sure you want to revoke this token?",
         "submit": "Revoke",
         "title": "Revoke Access Token"
@@ -8817,7 +8817,7 @@
         "title": "Default App Mode"
       },
       "defaultModel": {
-        "description": "This model will be used by Onyx by default in your chats.",
+        "description": "This model will be used by IDAT-GPT by default in your chats.",
         "title": "Default Model"
       },
       "defaultReasoningLevel": {
@@ -8842,7 +8842,7 @@
       "connectButton": "Connect",
       "disconnectModal": {
         "continueNote": "You can still continue existing sessions referencing {name} content.",
-        "description": "Onyx will no longer be able to access or search content from your {name} account.",
+        "description": "IDAT-GPT will no longer be able to access or search content from your {name} account.",
         "disconnecting": "Disconnecting...",
         "submit": "Disconnect",
         "title": "Disconnect *{name}*"
@@ -8889,7 +8889,7 @@
         "copy": "Copy",
         "copyError": "Could not copy value."
       },
-      "description": "Connect external tools to the models available to you in Onyx.",
+      "description": "Connect external tools to the models available to you in IDAT-GPT.",
       "guideButton": "Guide",
       "models": {
         "description": "{count, plural, one {# model is available to your account. Open a provider to copy an ID.} other {# models are available to your account. Open a provider to copy an ID.}}",
@@ -8916,15 +8916,15 @@
     },
     "memory": {
       "empty": {
-        "description": "Add personal note or memory that Onyx should remember."
+        "description": "Add personal note or memory that IDAT-GPT should remember."
       },
       "referenceStoredMemories": {
-        "description": "Let Onyx reference stored memories in chats.",
+        "description": "Let IDAT-GPT reference stored memories in chats.",
         "title": "Reference Stored Memories"
       },
       "title": "Memory",
       "updateMemories": {
-        "description": "Let Onyx generate and update stored memories.",
+        "description": "Let IDAT-GPT generate and update stored memories.",
         "title": "Update Memories"
       },
       "viewAll": {

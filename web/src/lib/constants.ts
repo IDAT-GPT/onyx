@@ -1,5 +1,10 @@
 export const IS_DEV = process.env.NODE_ENV === "development";
 
+// Product name shown when no enterprise application_name is configured.
+export const DEFAULT_APPLICATION_NAME = "IDAT-GPT";
+// Name of the upstream open-source platform this product is built on.
+export const UPSTREAM_PLATFORM_NAME = "Onyx";
+
 export const HOST_URL = process.env.WEB_DOMAIN || "http://localhost:3000";
 
 export const INTERNAL_URL = process.env.INTERNAL_URL || "http://localhost:8080";

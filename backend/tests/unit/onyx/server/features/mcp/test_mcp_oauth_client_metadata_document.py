@@ -2,6 +2,7 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
+from onyx.configs.constants import ONYX_DEFAULT_APPLICATION_NAME
 from onyx.server.auth_check import PUBLIC_ENDPOINT_SPECS, is_route_in_spec_list
 from onyx.server.features.mcp import client_metadata
 
@@ -27,7 +28,7 @@ def test_mcp_oauth_client_metadata_document_is_public_and_cacheable(
     assert response.headers["Cache-Control"] == "public, max-age=3600"
     assert response.json() == {
         "client_id": f"{TEST_WEB_DOMAIN}/api/mcp/oauth/client-metadata",
-        "client_name": "Onyx",
+        "client_name": ONYX_DEFAULT_APPLICATION_NAME,
         "redirect_uris": [f"{TEST_WEB_DOMAIN}/mcp/oauth/callback"],
         "grant_types": ["authorization_code", "refresh_token"],
         "response_types": ["code"],

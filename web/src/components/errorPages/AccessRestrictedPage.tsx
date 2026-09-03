@@ -60,9 +60,9 @@ export default function AccessRestricted() {
     ? getSeatLimitMessage()
     : showRenewalMessage
       ? NEXT_PUBLIC_CLOUD_ENABLED
-        ? "Your access to Onyx has been temporarily suspended due to a lapse in your subscription."
-        : "Your access to Onyx has been temporarily suspended due to a lapse in your license."
-      : "A license is required to use Onyx. Your data is protected and will be available once a license is activated.";
+        ? "Your access to IDAT-GPT has been temporarily suspended due to a lapse in your subscription."
+        : "Your access to IDAT-GPT has been temporarily suspended due to a lapse in your license."
+      : "A license is required to use IDAT-GPT. Your data is protected and will be available once a license is activated.";
 
   const handleResubscribe = async () => {
     setIsLoading(true);
@@ -118,8 +118,9 @@ export default function AccessRestricted() {
       ) : NEXT_PUBLIC_CLOUD_ENABLED ? (
         <>
           <Text text03>
-            To reinstate your access and continue benefiting from Onyx&apos;s
-            powerful features, please update your payment information.
+            To reinstate your access and continue benefiting from
+            IDAT-GPT&apos;s powerful features, please update your payment
+            information.
           </Text>
 
           <Text text03>
@@ -149,7 +150,7 @@ export default function AccessRestricted() {
         <>
           <Text text03>
             {hadPreviousLicense
-              ? "To reinstate your access and continue using Onyx, please contact your system administrator to renew your license."
+              ? "To reinstate your access and continue using IDAT-GPT, please contact your system administrator to renew your license."
               : "To get started, please contact your system administrator to obtain a license."}
           </Text>
 

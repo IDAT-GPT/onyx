@@ -266,7 +266,7 @@ export default function MemoriesModal({
         <Modal.Header
           icon={SvgAddLines}
           title="Memory"
-          description="Let Onyx reference these stored notes and memories in chats."
+          description="Let IDAT-GPT reference these stored notes and memories in chats."
           onClose={close}
         >
           <Section flexDirection="row" gap={2}>

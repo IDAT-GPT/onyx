@@ -8,7 +8,7 @@ import {
 import { cn } from "@opal/utils";
 import Text from "@/refresh-components/texts/Text";
 import Truncated from "@/refresh-components/texts/Truncated";
-import { SvgOnyxLogo, SvgOnyxLogoTyped } from "@opal/logos";
+import { SvgIdatGptLogo, SvgIdatGptLogoTyped } from "@opal/logos";
 
 export interface LogoProps {
   folded?: boolean;
@@ -27,9 +27,12 @@ export function Logo({ folded, size, className, onyxBranded }: LogoProps) {
 
   if (onyxBranded) {
     return folded ? (
-      <SvgOnyxLogo size={resolvedSize} className={cn("shrink-0", className)} />
+      <SvgIdatGptLogo
+        size={resolvedSize}
+        className={cn("shrink-0", className)}
+      />
     ) : (
-      <SvgOnyxLogoTyped size={resolvedSize} className={className} />
+      <SvgIdatGptLogoTyped size={resolvedSize} className={className} />
     );
   }
 
@@ -49,7 +52,7 @@ export function Logo({ folded, size, className, onyxBranded }: LogoProps) {
       />
     </div>
   ) : (
-    <SvgOnyxLogo size={resolvedSize} className={cn("shrink-0", className)} />
+    <SvgIdatGptLogo size={resolvedSize} className={cn("shrink-0", className)} />
   );
 
   const renderNameAndPoweredBy = (opts: {
@@ -96,8 +99,8 @@ export function Logo({ folded, size, className, onyxBranded }: LogoProps) {
   return applicationName ? (
     renderNameAndPoweredBy({ includeLogo: true, includeName: true })
   ) : folded ? (
-    <SvgOnyxLogo size={resolvedSize} className={cn("shrink-0", className)} />
+    <SvgIdatGptLogo size={resolvedSize} className={cn("shrink-0", className)} />
   ) : (
-    <SvgOnyxLogoTyped size={resolvedSize} className={className} />
+    <SvgIdatGptLogoTyped size={resolvedSize} className={className} />
   );
 }

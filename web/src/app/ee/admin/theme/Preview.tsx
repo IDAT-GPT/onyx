@@ -6,7 +6,8 @@ import Text from "@/refresh-components/texts/Text";
 import Truncated from "@/refresh-components/texts/Truncated";
 import { ensureHrefProtocol } from "@/lib/utils";
 import { cn } from "@opal/utils";
-import { SvgOnyxLogo } from "@opal/logos";
+import { SvgIdatGptLogo } from "@opal/logos";
+import { DEFAULT_APPLICATION_NAME } from "@/lib/constants";
 import MinimalMarkdown from "@/components/chat/MinimalMarkdown";
 
 const previewMarkdownComponents = {
@@ -78,7 +79,7 @@ function PreviewLogo({
       className={cn("shrink-0 rounded-full", className)}
     />
   ) : (
-    <SvgOnyxLogo size={size} className={cn("shrink-0", className)} />
+    <SvgIdatGptLogo size={size} className={cn("shrink-0", className)} />
   );
 }
 
@@ -205,7 +206,7 @@ function PreviewStart({
             {(logoDisplayStyle === "logo_and_name" ||
               logoDisplayStyle === "name_only") && (
               <Truncated mainUiAction text04 nowrap>
-                {applicationDisplayName || "Onyx"}
+                {applicationDisplayName || DEFAULT_APPLICATION_NAME}
               </Truncated>
             )}
           </div>

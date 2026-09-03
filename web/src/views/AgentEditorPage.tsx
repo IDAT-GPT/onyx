@@ -1743,7 +1743,7 @@ export default function AgentEditorPage({
                                 <InputHorizontal
                                   withLabel="llm_model"
                                   title="Default Model"
-                                  description="This model will be used by Onyx by default in your chats."
+                                  description="This model will be used by IDAT-GPT by default in your chats."
                                 >
                                   <ModelSelector
                                     value={

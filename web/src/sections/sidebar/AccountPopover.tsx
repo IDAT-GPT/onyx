@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { LOGOUT_DISABLED } from "@/lib/constants";
+import {
+  DEFAULT_APPLICATION_NAME,
+  LOGOUT_DISABLED,
+  UPSTREAM_PLATFORM_NAME,
+} from "@/lib/constants";
 import { preload } from "swr";
 import { errorHandlingFetcher } from "@/lib/fetcher";
 import {
@@ -187,8 +191,10 @@ function SettingsPopover({
             orientation="reverse"
             icon={SvgOnyxLogo}
             title={markdown(
-              `[Onyx ${
-                settings.version ?? "dev"
+              `[${DEFAULT_APPLICATION_NAME} powered by ${UPSTREAM_PLATFORM_NAME}${
+                settings.version && settings.version !== "Development"
+                  ? ` ${settings.version}`
+                  : ""
               }](https://docs.onyx.app/changelog)`
             )}
           />

@@ -39,9 +39,9 @@ export const TRACING_PROVIDER_DETAILS: Record<
       {
         name: "project",
         label: "Project Name",
-        placeholder: "Onyx",
+        placeholder: "IDAT-GPT",
         optional: true,
-        defaultValue: "Onyx",
+        defaultValue: "IDAT-GPT",
         help: "Braintrust project name traces are logged to.",
       },
       {

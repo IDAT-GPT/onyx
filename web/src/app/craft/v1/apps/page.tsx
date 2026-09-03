@@ -86,7 +86,7 @@ export default function ExternalAppsPage() {
       <SettingsLayouts.Header
         icon={SvgPlug}
         title="Apps"
-        description="Connect the tools Onyx Craft can use as context while it works."
+        description="Connect the tools IDAT-GPT Craft can use as context while it works."
         rightChildren={
           isAdmin ? (
             <Button

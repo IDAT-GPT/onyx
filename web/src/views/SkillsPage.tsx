@@ -296,7 +296,7 @@ export default function SkillsPage() {
                   sizePreset="main-ui"
                   rounding={2}
                   icon={SvgEdit}
-                  description="Write the instructions and add supporting files in Onyx."
+                  description="Write the instructions and add supporting files in IDAT-GPT."
                   onClick={() => {
                     setCreateMenuOpen(false);
                     router.push("/craft/v1/skills/new" as Route);

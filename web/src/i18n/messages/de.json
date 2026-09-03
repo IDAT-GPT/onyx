@@ -251,7 +251,7 @@
         },
         "placeholder": "Methode auswählen",
         "ptOauth": {
-          "description": "Das OAuth-Zugriffstoken des Benutzers weiterleiten, mit dem Onyx authentifiziert wird.",
+          "description": "Das OAuth-Zugriffstoken des Benutzers weiterleiten, mit dem IDAT-GPT authentifiziert wird.",
           "label": "OAuth Pass-through"
         },
         "required": "Der Authentifizierungstyp ist erforderlich"
@@ -290,11 +290,11 @@
         "title": "Keine Authentifizierung für diesen MCP-Server"
       },
       "oauthInfo": {
-        "discovery": "Client ID und Secret sind optional. Bei der automatischen Erkennung verwendet Onyx ein Client ID Metadata Document (CIMD), sofern unterstützt, und greift sonst auf Dynamic Client Registration (DCR) zurück.",
-        "manualRegistration": "Wenn Ihr Server keine der beiden Methoden unterstützt, registrieren Sie Ihre Onyx-Instanz zuerst beim Anbieter des Servers. Gewähren Sie Onyx die für Ihre Aktionen nötigen Scopes."
+        "discovery": "Client ID und Secret sind optional. Bei der automatischen Erkennung verwendet IDAT-GPT ein Client ID Metadata Document (CIMD), sofern unterstützt, und greift sonst auf Dynamic Client Registration (DCR) zurück.",
+        "manualRegistration": "Wenn Ihr Server keine der beiden Methoden unterstützt, registrieren Sie Ihre IDAT-GPT-Instanz zuerst beim Anbieter des Servers. Gewähren Sie IDAT-GPT die für Ihre Aktionen nötigen Scopes."
       },
       "passThroughNotice": {
-        "description": "Onyx leitet das OAuth-Zugriffstoken des Benutzers direkt als Authorization-Header an den Server weiter. Stellen Sie sicher, dass der Server die Authentifizierung mit demselben Anbieter unterstützt.",
+        "description": "IDAT-GPT leitet das OAuth-Zugriffstoken des Benutzers direkt als Authorization-Header an den Server weiter. Stellen Sie sicher, dass der Server die Authentifizierung mit demselben Anbieter unterstützt.",
         "title": "Verwenden Sie Pass-through für Dienste mit gemeinsamem Identitätsanbieter."
       },
       "providerMode": {
@@ -401,7 +401,7 @@
         },
         "placeholder": "Methode auswählen",
         "ptOauth": {
-          "description": "Das OAuth-Zugriffstoken des Benutzers weiterleiten, mit dem Onyx authentifiziert wird.",
+          "description": "Das OAuth-Zugriffstoken des Benutzers weiterleiten, mit dem IDAT-GPT authentifiziert wird.",
           "label": "OAuth Pass-through"
         },
         "required": "Die Authentifizierungsmethode ist erforderlich"
@@ -449,7 +449,7 @@
         "description": "OAuth Pass-through erfordert eine OAuth-fähige Anmeldemethode (Google oder OIDC)."
       },
       "passThroughNotice": {
-        "description": "Onyx leitet das OAuth-Zugriffstoken des Benutzers direkt als Authorization-Header an den Server weiter. Stellen Sie sicher, dass der Server die Authentifizierung mit demselben Anbieter unterstützt.",
+        "description": "IDAT-GPT leitet das OAuth-Zugriffstoken des Benutzers direkt als Authorization-Header an den Server weiter. Stellen Sie sicher, dass der Server die Authentifizierung mit demselben Anbieter unterstützt.",
         "title": "Verwenden Sie Pass-through für Dienste mit gemeinsamem Identitätsanbieter."
       },
       "redirectUri": {
@@ -811,7 +811,7 @@
         "title": "Feedback"
       },
       "page": {
-        "description": "Verstehen Sie, wie Ihr Arbeitsbereich Onyx bei Abfragen, Feedback und Agenten nutzt."
+        "description": "Verstehen Sie, wie Ihr Arbeitsbereich IDAT-GPT bei Abfragen, Feedback und Agenten nutzt."
       },
       "reports": {
         "calendar": {
@@ -1030,7 +1030,7 @@
         "close": {
           "label": "Schließen"
         },
-        "description": "Fügen Sie manuell eine Lizenz für diese Onyx-Instanz hinzu und aktivieren Sie sie.",
+        "description": "Fügen Sie manuell eine Lizenz für diese IDAT-GPT-Instanz hinzu und aktivieren Sie sie.",
         "emptyKey": {
           "error": "Bitte geben Sie einen Lizenzschlüssel ein"
         },
@@ -1041,7 +1041,7 @@
           "label": "Lizenzschlüssel abgelaufen"
         },
         "keyField": {
-          "description": "Fügen Sie Ihre von Onyx erhaltene Lizenzschlüsseldatei ein oder hängen Sie sie an.",
+          "description": "Fügen Sie Ihre von IDAT-GPT erhaltene Lizenzschlüsseldatei ein oder hängen Sie sie an.",
           "title": "Lizenzschlüssel"
         },
         "updateKey": {
@@ -1337,7 +1337,7 @@
           "placeholder": "In Tagen",
           "restoreTooltip": "Standard wiederherstellen"
         },
-        "description": "Legen Sie fest, wie lange Onyx Chats in Ihrer Organisation aufbewahren soll.",
+        "description": "Legen Sie fest, wie lange IDAT-GPT Chats in Ihrer Organisation aufbewahren soll.",
         "enterprisePlanTag": {
           "label": "Enterprise-Tarif"
         },
@@ -1399,7 +1399,7 @@
       },
       "teamContext": {
         "description": "Benutzer können in ihren persönlichen Einstellungen zusätzlich eigenen Kontext angeben.",
-        "placeholder": "Beschreiben Sie Ihr Team und wie sich Onyx verhalten soll.",
+        "placeholder": "Beschreiben Sie Ihr Team und wie sich IDAT-GPT verhalten soll.",
         "title": "Team-Kontext"
       },
       "teamName": {
@@ -2483,7 +2483,7 @@
         "title": "Keine Benutzer gefunden"
       },
       "header": {
-        "description": "Legen Sie fest, wer Craft verwenden darf, den agentischen App-Builder von Onyx.",
+        "description": "Legen Sie fest, wer Craft verwenden darf, den agentischen App-Builder von IDAT-GPT.",
         "title": "Zugriff"
       },
       "perUserAccess": {
@@ -2514,7 +2514,7 @@
         }
       },
       "unavailable": {
-        "description": "Craft wird von Onyx pro Bereitstellung aktiviert. Wenden Sie sich an Ihren Onyx-Ansprechpartner, um Zugriff zu erhalten.",
+        "description": "Craft wird von IDAT-GPT pro Bereitstellung aktiviert. Wenden Sie sich an Ihren IDAT-GPT-Ansprechpartner, um Zugriff zu erhalten.",
         "title": "Craft ist in dieser Bereitstellung nicht verfügbar"
       },
       "usersLoadError": {
@@ -2575,7 +2575,7 @@
         "label": "In Craft ausprobieren"
       },
       "unavailable": {
-        "description": "Craft wird von Onyx pro Bereitstellung aktiviert. Wenden Sie sich an Ihren Onyx-Ansprechpartner, um Zugriff zu erhalten.",
+        "description": "Craft wird von IDAT-GPT pro Bereitstellung aktiviert. Wenden Sie sich an Ihren IDAT-GPT-Ansprechpartner, um Zugriff zu erhalten.",
         "title": "Craft ist in dieser Bereitstellung nicht verfügbar"
       }
     },
@@ -2795,7 +2795,7 @@
       },
       "page": {
         "header": {
-          "description": "Verbinden Sie Onyx mit Ihren Discord-Servern. Benutzer können Fragen direkt in Discord-Kanälen stellen."
+          "description": "Verbinden Sie IDAT-GPT mit Ihren Discord-Servern. Benutzer können Fragen direkt in Discord-Kanälen stellen."
         }
       },
       "registrationKey": {
@@ -2832,7 +2832,7 @@
           "label": "API-Schlüssel löschen"
         },
         "deleteHint": "Löschen Sie den aktuellen API-Schlüssel, bevor Sie ihn aktualisieren.",
-        "description": "Unstructured extrahiert komplexe Daten aus Formaten wie .pdf, .docx, .png, .pptx usw. und wandelt sie in sauberen Text um, den Onyx aufnehmen kann. Geben Sie einen API-Schlüssel an, um die Dokumentverarbeitung mit Unstructured zu aktivieren.",
+        "description": "Unstructured extrahiert komplexe Daten aus Formaten wie .pdf, .docx, .png, .pptx usw. und wandelt sie in sauberen Text um, den IDAT-GPT aufnehmen kann. Geben Sie einen API-Schlüssel an, um die Dokumentverarbeitung mit Unstructured zu aktivieren.",
         "learnMore": "Erfahren Sie <link>hier</link> mehr über Unstructured.",
         "note": "<label>Hinweis:</label> Dadurch werden Dokumente zur Verarbeitung an die Server von Unstructured gesendet.",
         "saveButton": {
@@ -2909,7 +2909,7 @@
         "deleteScheduled": {
           "toast": "Löschen des Dokumentensatzes \"{name}\" geplant"
         },
-        "description": "Mit **Dokumentensätzen** können Sie logisch zusammengehörende Dokumente zu einem Paket bündeln. Diese können Sie dann bei der Suche als Filter verwenden, um den Umfang der von Onyx durchsuchten Informationen zu steuern.",
+        "description": "Mit **Dokumentensätzen** können Sie logisch zusammengehörende Dokumente zu einem Paket bündeln. Diese können Sie dann bei der Suche als Filter verwenden, um den Umfang der von IDAT-GPT durchsuchten Informationen zu steuern.",
         "edit": {
           "header": {
             "title": "Dokumentensatz bearbeiten"
@@ -3095,7 +3095,7 @@
         "noCustomSkills": "keine benutzerdefinierten Skills",
         "orgCredentialsSet": "Anmeldedaten der Organisation festgelegt",
         "perUserCredentials": "Anmeldedaten pro Benutzer",
-        "providedByOnyx": "von Onyx bereitgestellt",
+        "providedByOnyx": "von IDAT-GPT bereitgestellt",
         "tools": "{count, plural, one {# Tool} other {# Tools}}",
         "upstreamPatterns": "{count, plural, one {# Upstream-Muster} other {# Upstream-Muster}}"
       },
@@ -3216,7 +3216,7 @@
           "tooltip": "Die Dokument-Embeddings werden aufgrund kürzlicher Änderungen an dieser Gruppe aktualisiert."
         },
         "systemGroup": {
-          "description": "Onyx verwaltet diese Gruppe. Sie enthält nur Mitglieder, und nur diese können Sie ändern.",
+          "description": "IDAT-GPT verwaltet diese Gruppe. Sie enthält nur Mitglieder, und nur diese können Sie ändern.",
           "title": "Systemgruppe"
         },
         "toasts": {
@@ -3329,7 +3329,7 @@
         }
       },
       "permissionsChanged": {
-        "description": "Onyx verwendet jetzt gruppenbasierte Berechtigungen. Der Zugriff wird pro Gruppe konfiguriert, sodass sich die Berechtigungen eines Benutzers aus allen Gruppen ergeben, denen er angehört.",
+        "description": "IDAT-GPT verwendet jetzt gruppenbasierte Berechtigungen. Der Zugriff wird pro Gruppe konfiguriert, sodass sich die Berechtigungen eines Benutzers aus allen Gruppen ergeben, denen er angehört.",
         "learnMore": {
           "label": "Mehr erfahren"
         },
@@ -3392,7 +3392,7 @@
           "placeholder": "Kostenlimit",
           "unit": "(USD)"
         },
-        "disabledTooltip": "Token-Ratenlimits sind nur in der [Enterprise-Version von Onyx](/admin/billing) verfügbar.",
+        "disabledTooltip": "Token-Ratenlimits sind nur in der [Enterprise-Version von IDAT-GPT](/admin/billing) verfügbar.",
         "section": {
           "description": "Begrenzen Sie die Anzahl der Token, die diese Gruppe in einem bestimmten Zeitraum verwenden darf.",
           "title": "Token-Ratenlimit"
@@ -3476,7 +3476,7 @@
           "message": "Die Prüfung des API-Schlüssels ist fehlgeschlagen"
         },
         "authMethod": {
-          "idle": "Wählen Sie, wie sich Onyx bei Google Vertex AI authentifizieren soll.",
+          "idle": "Wählen Sie, wie sich IDAT-GPT bei Google Vertex AI authentifizieren soll.",
           "label": "Authentifizierungsmethode",
           "required": "Authentifizierungsmethode ist erforderlich",
           "serviceAccount": {
@@ -3520,7 +3520,7 @@
           "required": "Standort ist erforderlich"
         },
         "projectId": {
-          "idle": "Das GCP-Projekt, in dem Vertex AI aktiviert ist. Onyx authentifiziert sich mit dem an den Pod gebundenen Dienstkonto (GKE Workload Identity).",
+          "idle": "Das GCP-Projekt, in dem Vertex AI aktiviert ist. IDAT-GPT authentifiziert sich mit dem an den Pod gebundenen Dienstkonto (GKE Workload Identity).",
           "label": "GCP-Projekt-ID",
           "required": "Projekt-ID ist erforderlich"
         },
@@ -3608,7 +3608,7 @@
           "title": "Bereitstellungsname"
         },
         "modelName": {
-          "description": "Eine Bezeichnung für dieses Modell in Onyx. Azure leitet Anfragen über den Bereitstellungsnamen weiter, daher muss dies nur eine eindeutige Kennung sein."
+          "description": "Eine Bezeichnung für dieses Modell in IDAT-GPT. Azure leitet Anfragen über den Bereitstellungsnamen weiter, daher muss dies nur eine eindeutige Kennung sein."
         },
         "targetUrl": {
           "title": "Ziel-URL"
@@ -3659,7 +3659,7 @@
         "cloudManaged": {
           "title": "Das Embedding-Modell und die Einstellungen werden von Onyx Cloud verwaltet."
         },
-        "description": "Onyx verwendet dieses Modell, um Dokumente für Suche und Retrieval zu kodieren.",
+        "description": "IDAT-GPT verwendet dieses Modell, um Dokumente für Suche und Retrieval zu kodieren.",
         "title": "Embedding-Modell"
       },
       "errorsModal": {
@@ -3707,7 +3707,7 @@
         },
         "modelName": {
           "placeholder": "model-name",
-          "selfHostedDescription": "Onyx verbindet sich mit diesem Modell auf Ihrem selbst gehosteten Endpunkt.",
+          "selfHostedDescription": "IDAT-GPT verbindet sich mit diesem Modell auf Ihrem selbst gehosteten Endpunkt.",
           "title": "Modellname"
         },
         "normalize": {
@@ -3751,7 +3751,7 @@
           "title": "API-Basis-URL"
         },
         "modelName": {
-          "description": "Onyx verbindet sich mit diesem Modell auf Ihrem {provider}-Proxy."
+          "description": "IDAT-GPT verbindet sich mit diesem Modell auf Ihrem {provider}-Proxy."
         }
       },
       "maxImageSize": {
@@ -4123,7 +4123,7 @@
         "title": "Neue LLM-Konfiguration vorübergehend nicht verfügbar."
       },
       "defaultModel": {
-        "description": "Dieses Modell wird von Onyx standardmäßig in Ihren Chats verwendet.",
+        "description": "Dieses Modell wird von IDAT-GPT standardmäßig in Ihren Chats verwendet.",
         "title": "Standardmodell"
       },
       "deleteModal": {
@@ -4137,7 +4137,7 @@
       },
       "groups": {
         "addProvider": {
-          "description": "Onyx unterstützt sowohl gängige Anbieter als auch selbst gehostete Modelle.",
+          "description": "IDAT-GPT unterstützt sowohl gängige Anbieter als auch selbst gehostete Modelle.",
           "title": "Anbieter hinzufügen"
         },
         "gateways": {
@@ -4211,7 +4211,7 @@
               "description": "Für Umgebungen außerhalb von AWS",
               "label": "Access Key"
             },
-            "description": "Wählen Sie, wie sich Onyx bei Bedrock authentifizieren soll.",
+            "description": "Wählen Sie, wie sich IDAT-GPT bei Bedrock authentifizieren soll.",
             "iam": {
               "description": "Empfohlen für AWS-Umgebungen",
               "label": "IAM-Rolle der Umgebung"
@@ -4223,7 +4223,7 @@
             "title": "Authentifizierungsmethode"
           },
           "iamNotice": {
-            "title": "Onyx authentifiziert sich mit der IAM-Rolle, die an die Umgebung angehängt ist, in der Onyx läuft."
+            "title": "IDAT-GPT authentifiziert sich mit der IAM-Rolle, die an die Umgebung angehängt ist, in der IDAT-GPT läuft."
           },
           "longTermApiKeyField": {
             "placeholder": "Ihr langfristiger API-Schlüssel",
@@ -4491,7 +4491,7 @@
         },
         "setup": {
           "apiBaseField": {
-            "containerizedNote": "Wenn Onyx in einem Container läuft, verwenden Sie `host.docker.internal` statt `localhost`, um einen Dienst auf Ihrem Host zu erreichen.",
+            "containerizedNote": "Wenn IDAT-GPT in einem Container läuft, verwenden Sie `host.docker.internal` statt `localhost`, um einen Dienst auf Ihrem Host zu erreichen.",
             "title": "API-Basis-URL"
           },
           "apiKeyField": {
@@ -4544,7 +4544,7 @@
         },
         "vertexAi": {
           "authMethodField": {
-            "description": "Wählen Sie, wie sich Onyx bei Google Vertex AI authentifizieren soll.",
+            "description": "Wählen Sie, wie sich IDAT-GPT bei Google Vertex AI authentifizieren soll.",
             "serviceAccount": {
               "description": "Laden Sie eine JSON-Schlüsseldatei eines GCP-Dienstkontos hoch",
               "label": "Service Account JSON"
@@ -4573,7 +4573,7 @@
             "projectRequired": "Die GCP-Projekt-ID ist erforderlich"
           },
           "workloadIdentityNotice": {
-            "title": "Onyx verwendet die impliziten Google Cloud-Anmeldedaten des Pods (über google.auth.default). Stellen Sie sicher, dass der Kubernetes-ServiceAccount an ein GCP-Dienstkonto mit Zugriff auf Vertex AI gebunden ist."
+            "title": "IDAT-GPT verwendet die impliziten Google Cloud-Anmeldedaten des Pods (über google.auth.default). Stellen Sie sicher, dass der Kubernetes-ServiceAccount an ein GCP-Dienstkonto mit Zugriff auf Vertex AI gebunden ist."
           }
         }
       },
@@ -4639,7 +4639,7 @@
         },
         "requestSentBody": "Ihre Beitrittsanfrage wurde gesendet. Sie können als eigenes Team weitermachen, während ein Administrator von {domain} Ihre Anfrage genehmigt.",
         "tryOnyxButton": {
-          "label": "Onyx währenddessen ausprobieren"
+          "label": "IDAT-GPT währenddessen ausprobieren"
         }
       },
       "newTenant": {
@@ -5018,7 +5018,7 @@
     },
     "serviceAccounts": {
       "deleteModal": {
-        "description": "Jede Anwendung, die den API-Schlüssel des Kontos *{name}* (`{keyDisplay}`) verwendet, verliert den Zugriff auf Onyx.",
+        "description": "Jede Anwendung, die den API-Schlüssel des Kontos *{name}* (`{keyDisplay}`) verwendet, verliert den Zugriff auf IDAT-GPT.",
         "submit": {
           "label": "Löschen"
         },
@@ -5065,7 +5065,7 @@
         "cancelButton": {
           "label": "Abbrechen"
         },
-        "description": "Verwenden Sie den API-Schlüssel eines Dienstkontos, um programmatisch mit Berechtigungen auf Benutzerebene auf die Onyx-API zuzugreifen. Sie können die Kontodetails später ändern.",
+        "description": "Verwenden Sie den API-Schlüssel eines Dienstkontos, um programmatisch mit Berechtigungen auf Benutzerebene auf die IDAT-GPT-API zuzugreifen. Sie können die Kontodetails später ändern.",
         "groups": {
           "empty": {
             "description": "Diesem Dienstkonto sind keine Gruppen zugewiesen.",
@@ -5127,7 +5127,7 @@
         }
       },
       "page": {
-        "description": "Verwenden Sie Dienstkonten, um programmatisch auf die Onyx-API zuzugreifen.",
+        "description": "Verwenden Sie Dienstkonten, um programmatisch auf die IDAT-GPT-API zuzugreifen.",
         "error": {
           "description": "Weitere Details finden Sie in der Konsole.",
           "title": "Dienstkonten konnten nicht geladen werden."
@@ -5197,7 +5197,7 @@
         }
       },
       "liteModeNotice": {
-        "description": "Diese Bereitstellung führt Onyx Lite aus. Onyx Lite hat keine Vektordatenbank — Konnektoren und die Dokumentenindizierung sind deaktiviert, und es wird nichts indiziert. Um Datenquellen zu verbinden und Dokumente zu indizieren, stellen Sie Onyx im **Standardmodus** bereit. Lesen Sie die [Bereitstellungsanleitung]({docsUrl}), um zu beginnen.",
+        "description": "Diese Bereitstellung führt Onyx Lite aus. Onyx Lite hat keine Vektordatenbank — Konnektoren und die Dokumentenindizierung sind deaktiviert, und es wird nichts indiziert. Um Datenquellen zu verbinden und Dokumente zu indizieren, stellen Sie IDAT-GPT im **Standardmodus** bereit. Lesen Sie die [Bereitstellungsanleitung]({docsUrl}), um zu beginnen.",
         "title": "Die Indizierung ist im Lite-Modus nicht verfügbar"
       },
       "providerCard": {
@@ -5451,7 +5451,7 @@
         },
         "showContinueInWebUi": {
           "label": "Schaltfläche zum Fortsetzen in der Weboberfläche anzeigen",
-          "tooltip": "Wenn aktiviert, wird am Ende der Antwort eine Schaltfläche angezeigt, mit der der Benutzer das Gespräch in der Onyx-Weboberfläche fortsetzen kann"
+          "tooltip": "Wenn aktiviert, wird am Ende der Antwort eine Schaltfläche angezeigt, mit der der Benutzer das Gespräch in der IDAT-GPT-Weboberfläche fortsetzen kann"
         },
         "stillNeedHelp": {
           "label": "Schaltfläche \"Brauchen Sie noch Hilfe?\" anzeigen",
@@ -5481,12 +5481,12 @@
         "autoAnswer": {
           "item": "Richten Sie OnyxBot so ein, dass er Fragen in bestimmten Kanälen automatisch beantwortet."
         },
-        "description": "Richten Sie Slack-Bots ein, die sich mit Onyx verbinden. Nach der Einrichtung können Sie Onyx direkt aus Slack Fragen stellen. Außerdem können Sie:",
+        "description": "Richten Sie Slack-Bots ein, die sich mit IDAT-GPT verbinden. Nach der Einrichtung können Sie IDAT-GPT direkt aus Slack Fragen stellen. Außerdem können Sie:",
         "directMessage": {
           "item": "Schreiben Sie OnyxBot direkt eine Nachricht, um wie in der Weboberfläche zu suchen."
         },
         "docsPrompt": {
-          "text": "Folgen Sie der <link>Anleitung</link> in der Onyx-Dokumentation, um zu beginnen!"
+          "text": "Folgen Sie der <link>Anleitung</link> in der IDAT-GPT-Dokumentation, um zu beginnen!"
         },
         "documentSets": {
           "item": "Wählen Sie je nach Kanal, in dem die Frage gestellt wird, aus welchen Dokumentensätzen OnyxBot antworten soll."
@@ -5524,7 +5524,7 @@
           "badge": "Deaktiviert"
         },
         "empty": {
-          "message": "Bitte fügen Sie einen neuen Slack-Bot hinzu, um mit Onyx zu chatten!"
+          "message": "Bitte fügen Sie einen neuen Slack-Bot hinzu, um mit IDAT-GPT zu chatten!"
         },
         "enabled": {
           "badge": "Aktiviert"
@@ -6063,7 +6063,7 @@
         }
       },
       "activateModal": {
-        "description": "<strong>{email}</strong> erhält den Zugriff auf Onyx zurück.",
+        "description": "<strong>{email}</strong> erhält den Zugriff auf IDAT-GPT zurück.",
         "submit": {
           "label": "Aktivieren"
         },
@@ -6073,7 +6073,7 @@
         }
       },
       "cancelInviteModal": {
-        "description": "<strong>{email}</strong> kann Onyx mit dieser Einladung nicht mehr beitreten.",
+        "description": "<strong>{email}</strong> kann IDAT-GPT mit dieser Einladung nicht mehr beitreten.",
         "submit": {
           "label": "Einladung zurückziehen"
         },
@@ -6083,7 +6083,7 @@
         }
       },
       "deactivateModal": {
-        "description": "<strong>{email}</strong> verliert sofort den Zugriff auf Onyx. Die Sitzungen und Agenten dieses Benutzers bleiben erhalten. Der Lizenzplatz wird freigegeben. Sie können dieses Konto später wieder aktivieren.",
+        "description": "<strong>{email}</strong> verliert sofort den Zugriff auf IDAT-GPT. Die Sitzungen und Agenten dieses Benutzers bleiben erhalten. Der Lizenzplatz wird freigegeben. Sie können dieses Konto später wieder aktivieren.",
         "submit": {
           "label": "Deaktivieren"
         },
@@ -6093,7 +6093,7 @@
         }
       },
       "deleteModal": {
-        "description": "<strong>{email}</strong> wird dauerhaft aus Onyx entfernt. Der gesamte Sitzungsverlauf wird gelöscht. Das Löschen kann nicht rückgängig gemacht werden.",
+        "description": "<strong>{email}</strong> wird dauerhaft aus IDAT-GPT entfernt. Der gesamte Sitzungsverlauf wird gelöscht. Das Löschen kann nicht rückgängig gemacht werden.",
         "submit": {
           "label": "Löschen"
         },
@@ -6218,7 +6218,7 @@
         "title": "Benutzer & Anfragen"
       },
       "permissionsNotice": {
-        "description": "Onyx verwendet jetzt gruppenbasierte Berechtigungen. Die Rollen Curator und Global Curator wurden durch konfigurierbare Gruppenberechtigungen ersetzt, mit Managern pro Gruppe für eine eingegrenzte Verwaltung.",
+        "description": "IDAT-GPT verwendet jetzt gruppenbasierte Berechtigungen. Die Rollen Curator und Global Curator wurden durch konfigurierbare Gruppenberechtigungen ersetzt, mit Managern pro Gruppe für eine eingegrenzte Verwaltung.",
         "learnMoreButton": {
           "label": "Mehr erfahren"
         },
@@ -6445,12 +6445,12 @@
           "label": "STT-Modell"
         },
         "targetUri": {
-          "description": "Fügen Sie den Endpunkt ein, der im [Azure Portal (Keys and Endpoint)]({portalUrl}) angezeigt wird. Onyx extrahiert die Sprachregion aus dieser URL. Beispiele: `https://westus.api.cognitive.microsoft.com/` oder `https://westus.tts.speech.microsoft.com/`.",
+          "description": "Fügen Sie den Endpunkt ein, der im [Azure Portal (Keys and Endpoint)]({portalUrl}) angezeigt wird. IDAT-GPT extrahiert die Sprachregion aus dieser URL. Beispiele: `https://westus.api.cognitive.microsoft.com/` oder `https://westus.tts.speech.microsoft.com/`.",
           "label": "Ziel-URI",
           "required": "Ziel-URI ist erforderlich"
         },
         "ttsModel": {
-          "description": "Dieses Modell wird von Onyx standardmäßig für Text-zu-Sprache verwendet.",
+          "description": "Dieses Modell wird von IDAT-GPT standardmäßig für Text-zu-Sprache verwendet.",
           "label": "Standardmodell"
         },
         "updateButton": {
@@ -6513,7 +6513,7 @@
           "message": "{label} getrennt"
         },
         "fallback": {
-          "description": "Onyx greift auf den integrierten Web-Crawler zurück."
+          "description": "IDAT-GPT greift auf den integrierten Web-Crawler zurück."
         },
         "header": {
           "description": "Dadurch werden die gespeicherten Anmeldedaten für diesen Anbieter entfernt.",
@@ -6739,7 +6739,7 @@
           "title": "Gesprächseinstiege"
         },
         "defaultModel": {
-          "description": "Dieses Modell wird von Onyx standardmäßig in Ihren Chats verwendet.",
+          "description": "Dieses Modell wird von IDAT-GPT standardmäßig in Ihren Chats verwendet.",
           "title": "Standardmodell"
         },
         "featured": {
@@ -6793,7 +6793,7 @@
         "label": "Neue Organisation erstellen"
       },
       "createTeamOption": {
-        "text": "Ein neues Onyx-Team erstellen"
+        "text": "Ein neues IDAT-GPT-Team erstellen"
       },
       "differentEmailPrompt": {
         "text": "Haben Sie ein Konto mit einer anderen E-Mail-Adresse?"
@@ -6802,10 +6802,10 @@
         "title": "Konto nicht gefunden"
       },
       "inviteOption": {
-        "text": "In ein bestehendes Onyx-Team eingeladen werden"
+        "text": "In ein bestehendes IDAT-GPT-Team eingeladen werden"
       },
       "notFound": {
-        "description": "Wir konnten Ihr Konto nicht finden. Um auf Onyx zuzugreifen, haben Sie folgende Möglichkeiten:"
+        "description": "Wir konnten Ihr Konto nicht finden. Um auf IDAT-GPT zuzugreifen, haben Sie folgende Möglichkeiten:"
       },
       "signInLink": {
         "label": "Anmelden"
@@ -6816,7 +6816,7 @@
         "description": "Zugriffsbeschränkungen oder Berechtigungen des Kontos"
       },
       "cloudSupportPrompt": {
-        "text": "Wenn das Problem weiterhin besteht, wenden Sie sich an das Onyx-Team unter <link>support@onyx.app</link>"
+        "text": "Wenn das Problem weiterhin besteht, wenden Sie sich an das IDAT-GPT-Team unter <link>support@onyx.app</link>"
       },
       "code": {
         "accessDenied": "Ihr Identitätsanbieter hat den Zugriff verweigert.",
@@ -7035,7 +7035,7 @@
         "label": "Wie haben Sie von uns erfahren?"
       },
       "subtitle": {
-        "text": "Starten Sie mit Onyx"
+        "text": "Starten Sie mit IDAT-GPT"
       }
     },
     "verifyEmail": {
@@ -7205,7 +7205,7 @@
       },
       "healthBanner": {
         "backendUnavailable": {
-          "description": "Wenn dies Ihre Ersteinrichtung ist oder Sie Ihre Onyx-Bereitstellung gerade aktualisiert haben, startet das Backend wahrscheinlich noch. Warten Sie ein bis zwei Minuten und laden Sie die Seite neu. Wenn das nicht hilft, stellen Sie sicher, dass das Backend eingerichtet ist, oder wenden Sie sich an einen Administrator.",
+          "description": "Wenn dies Ihre Ersteinrichtung ist oder Sie Ihre IDAT-GPT-Bereitstellung gerade aktualisiert haben, startet das Backend wahrscheinlich noch. Warten Sie ein bis zwei Minuten und laden Sie die Seite neu. Wenn das nicht hilft, stellen Sie sicher, dass das Backend eingerichtet ist, oder wenden Sie sich an einen Administrator.",
           "title": "Das Backend ist derzeit nicht erreichbar"
         }
       },
@@ -7310,7 +7310,7 @@
           "placeholder": "Wie kann ich Ihnen heute helfen?",
           "queuedPlaceholder": "Pfeil nach oben drücken, um Nachrichten in der Warteschlange zu bearbeiten",
           "searchPlaceholder": "Verbundene Quellen durchsuchen",
-          "speakingPlaceholder": "Onyx spricht..."
+          "speakingPlaceholder": "IDAT-GPT spricht..."
         },
         "sendButton": {
           "processingFilesTooltip": "Warten, bis die angehängten Dateien verarbeitet sind"
@@ -7431,7 +7431,7 @@
       },
       "sharedAppInputBar": {
         "input": {
-          "placeholder": "Wie kann Onyx Ihnen heute helfen?"
+          "placeholder": "Wie kann IDAT-GPT Ihnen heute helfen?"
         },
         "startSessionButton": {
           "label": "Neue Sitzung starten"
@@ -8358,7 +8358,7 @@
         "error": "Sie müssen den Bedingungen zustimmen, um auf die Anwendung zuzugreifen."
       },
       "header": {
-        "title": "Willkommen bei Onyx!"
+        "title": "Willkommen bei IDAT-GPT!"
       },
       "logoIcon": {
         "alt": "Logo"
@@ -8514,7 +8514,7 @@
         "placeholder": "Dateien filtern..."
       },
       "processing": {
-        "description": "Onyx verarbeitet Ihre hochgeladenen Dateien noch. Sie können den Agenten jetzt erstellen, aber er hat erst nach Abschluss der Verarbeitung Zugriff auf alle Dateien."
+        "description": "IDAT-GPT verarbeitet Ihre hochgeladenen Dateien noch. Sie können den Agenten jetzt erstellen, aber er hat erst nach Abschluss der Verarbeitung Zugriff auf alle Dateien."
       }
     },
     "search": {
@@ -8593,7 +8593,7 @@
         "button": {
           "label": "Websuche"
         },
-        "description": "Ermöglichen Sie Onyx, im Internet nach Informationen zu suchen.",
+        "description": "Ermöglichen Sie IDAT-GPT, im Internet nach Informationen zu suchen.",
         "title": "Websuche-Anbieter auswählen"
       }
     },
@@ -8613,7 +8613,7 @@
         "subtitle": "LiteLLM-kompatible APIs",
         "title": "Benutzerdefinierter LLM-Anbieter"
       },
-      "description": "Onyx unterstützt sowohl selbst gehostete Modelle als auch gängige Anbieter.",
+      "description": "IDAT-GPT unterstützt sowohl selbst gehostete Modelle als auch gängige Anbieter.",
       "edit": {
         "ariaLabel": "LLM-Anbieter bearbeiten"
       },
@@ -8633,7 +8633,7 @@
       "input": {
         "placeholder": "Ihr Name"
       },
-      "title": "Wie soll Onyx Sie nennen?"
+      "title": "Wie soll IDAT-GPT Sie nennen?"
     },
     "nonAdminStep": {
       "confirmation": {
@@ -8751,7 +8751,7 @@
         "searchPlaceholder": "Suchen..."
       },
       "revokeModal": {
-        "description": "Jede Anwendung, die das Token {name} ({tokenDisplay}) verwendet, verliert den Zugriff auf Onyx. Diese Aktion kann nicht rückgängig gemacht werden.",
+        "description": "Jede Anwendung, die das Token {name} ({tokenDisplay}) verwendet, verliert den Zugriff auf IDAT-GPT. Diese Aktion kann nicht rückgängig gemacht werden.",
         "question": "Möchten Sie dieses Token wirklich widerrufen?",
         "submit": "Widerrufen",
         "title": "Zugriffstoken widerrufen"
@@ -8817,7 +8817,7 @@
         "title": "Standard-App-Modus"
       },
       "defaultModel": {
-        "description": "Dieses Modell wird von Onyx standardmäßig in Ihren Chats verwendet.",
+        "description": "Dieses Modell wird von IDAT-GPT standardmäßig in Ihren Chats verwendet.",
         "title": "Standardmodell"
       },
       "defaultReasoningLevel": {
@@ -8842,7 +8842,7 @@
       "connectButton": "Verbinden",
       "disconnectModal": {
         "continueNote": "Sie können bestehende Sitzungen, die auf Inhalte von {name} verweisen, weiterhin fortsetzen.",
-        "description": "Onyx kann nicht mehr auf Inhalte aus Ihrem {name}-Konto zugreifen oder diese durchsuchen.",
+        "description": "IDAT-GPT kann nicht mehr auf Inhalte aus Ihrem {name}-Konto zugreifen oder diese durchsuchen.",
         "disconnecting": "Wird getrennt...",
         "submit": "Trennen",
         "title": "*{name}* trennen"
@@ -8889,7 +8889,7 @@
         "copy": "Kopieren",
         "copyError": "Wert konnte nicht kopiert werden."
       },
-      "description": "Verbinden Sie externe Tools mit den Modellen, die Ihnen in Onyx zur Verfügung stehen.",
+      "description": "Verbinden Sie externe Tools mit den Modellen, die Ihnen in IDAT-GPT zur Verfügung stehen.",
       "guideButton": "Anleitung",
       "models": {
         "description": "{count, plural, one {# Modell ist für Ihr Konto verfügbar. Öffnen Sie einen Anbieter, um eine ID zu kopieren.} other {# Modelle sind für Ihr Konto verfügbar. Öffnen Sie einen Anbieter, um eine ID zu kopieren.}}",
@@ -8916,15 +8916,15 @@
     },
     "memory": {
       "empty": {
-        "description": "Fügen Sie eine persönliche Notiz oder Erinnerung hinzu, die sich Onyx merken soll."
+        "description": "Fügen Sie eine persönliche Notiz oder Erinnerung hinzu, die sich IDAT-GPT merken soll."
       },
       "referenceStoredMemories": {
-        "description": "Lassen Sie Onyx gespeicherte Erinnerungen in Chats verwenden.",
+        "description": "Lassen Sie IDAT-GPT gespeicherte Erinnerungen in Chats verwenden.",
         "title": "Gespeicherte Erinnerungen verwenden"
       },
       "title": "Erinnerungen",
       "updateMemories": {
-        "description": "Lassen Sie Onyx gespeicherte Erinnerungen erstellen und aktualisieren.",
+        "description": "Lassen Sie IDAT-GPT gespeicherte Erinnerungen erstellen und aktualisieren.",
         "title": "Erinnerungen aktualisieren"
       },
       "viewAll": {
@@ -9124,10 +9124,10 @@
     },
     "adminSidebar": {
       "businessOrEnterpriseOnly": {
-        "tooltip": "Diese Funktion ist nur in der [Business- oder Enterprise-Version von Onyx](/admin/billing) verfügbar."
+        "tooltip": "Diese Funktion ist nur in der [Business- oder Enterprise-Version von IDAT-GPT](/admin/billing) verfügbar."
       },
       "enterpriseOnly": {
-        "tooltip": "Diese Funktion ist nur in der [Enterprise-Version von Onyx](/admin/billing) verfügbar."
+        "tooltip": "Diese Funktion ist nur in der [Enterprise-Version von IDAT-GPT](/admin/billing) verfügbar."
       },
       "exitAdminPanel": {
         "label": "Admin-Bereich verlassen"
