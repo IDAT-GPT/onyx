@@ -232,6 +232,23 @@ def _strip_thinking_blocks_from_messages(
     ]
 
 
+def _fill_missing_message_content(
+    messages: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Give every message an explicit `content` key.
+
+    `_prompt_to_dicts` serializes with exclude_none, which drops `content`
+    from assistant tool-call messages. The OpenAI cloud API tolerates a
+    missing/null content there, but strict self-hosted OpenAI-compatible
+    servers reject the request ("missing field `content`"). An empty string
+    is accepted everywhere.
+    """
+    return [
+        msg if msg.get("content") is not None else {**msg, "content": ""}
+        for msg in messages
+    ]
+
+
 def _strip_tool_content_from_messages(
     messages: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
@@ -925,6 +942,15 @@ class LitellmLLM(LLM):
                 )
             ):
                 messages = _strip_thinking_blocks_from_messages(messages)
+
+            # Strict self-hosted OpenAI-compatible servers reject messages
+            # whose `content` key is missing or null (dropped by the
+            # exclude_none serialization for assistant tool-call messages).
+            if (
+                self._model_provider == LlmProviderNames.OPENAI_COMPATIBLE
+                or self._custom_llm_provider == LlmProviderNames.OPENAI_COMPATIBLE
+            ):
+                messages = _fill_missing_message_content(messages)
 
             # Bedrock's Converse API requires toolConfig when messages
             # contain toolUse/toolResult content blocks. When no tools are
