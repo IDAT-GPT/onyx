@@ -26,7 +26,7 @@ intentional: you can experiment in development without any risk to colleagues.
 
 ```mermaid
 flowchart LR
-    Dev["👩‍💻 You edit code<br/>see it at localhost:3000"] -->|git commit| Git["📦 Git branch idat-gpt<br/>(backup: github.com/darilsobze/onyx)"]
+    Dev["👩‍💻 You edit code<br/>see it at localhost:3000"] -->|git commit| Git["📦 Git branch idat-gpt<br/>(backup: github.com/IDAT-GPT/onyx)"]
     Git -->|"TAG=... bash ~/release.sh"| Img["🐳 Docker images<br/>idat-gpt/backend, web-server, model-server"]
     Img -->|docker compose up -d| Prod["🌐 Production<br/>http://10.0.0.206"]
 ```
@@ -221,7 +221,7 @@ machine do not protect against a dead disk.
 ### Total loss of the VM
 
 1. New machine with Docker (any Linux, or Windows+WSL like today).
-2. `git clone https://github.com/darilsobze/onyx -b idat-gpt`
+2. `git clone https://github.com/IDAT-GPT/onyx -b idat-gpt`
 3. Restore `idat-gpt.env`, build (`release.sh`), start the stack.
 4. Restore the database dump into `relational_db`
    (`gunzip -c db-<date>.sql.gz | docker exec -i <db-container> psql -U postgres`).
@@ -261,3 +261,31 @@ The first registered account, plus anyone promoted in the admin panel.
 1. `docker compose -p idat-gpt ps` — is a container `Exited`/`unhealthy`?
 2. `docker compose -p idat-gpt logs --tail 100 <service>` — read the error.
 3. `docker compose -p idat-gpt up -d` — recreate what is missing.
+
+---
+
+## 8. Related repositories
+
+IDAT-GPT is one of three repositories that make up the platform. All live on
+the **IDAT-GPT** GitHub account.
+
+| Repository | What it is |
+|---|---|
+| **IDAT-GPT/onyx** (this one) | The AI platform itself — chat, document search, agents, connectors. Fork of [onyx-dot-app/onyx](https://github.com/onyx-dot-app/onyx). Our work is on branch `idat-gpt`. |
+| [IDAT-GPT/idat-crm](https://github.com/IDAT-GPT/idat-crm) | The semantic model of the CRM database `idatdata`, plus the scripts that export tickets and bugs into the SharePoint folders this platform indexes. |
+| [IDAT-GPT/WrenAI](https://github.com/IDAT-GPT/WrenAI) | Fork of the Wren engine that serves that model over MCP at `http://10.0.0.206:8081/mcp`. |
+
+### How they fit together
+
+```
+IDAT-GPT (this repo)  ──asks──▶  wren MCP :8081  ──reads──▶  MySQL idatdata
+   │                             (IDAT-GPT/WrenAI serving IDAT-GPT/idat-crm)
+   └──indexes──▶  SharePoint folders
+                  (filled by idat-crm/tools/*, see that repo's README §6)
+```
+
+**One thing worth knowing when adding SharePoint content:** our SharePoint
+connector attaches no per-document metadata, so *the folder is the only
+retrieval filter that exists*. Split folders as finely as you will ever want to
+filter, then compose upward — `Folder → Connector → DocumentSet → Assistant`.
+`.md` is indexed natively, so there is no reason to convert exports to PDF.
